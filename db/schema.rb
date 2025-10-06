@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_06_054052) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_06_234238) do
   create_table "authors", force: :cascade do |t|
     t.string "auth_fname"
     t.string "auth_lname"
@@ -39,7 +39,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_06_054052) do
 
   create_table "quotes", force: :cascade do |t|
     t.text "quote", null: false
-    t.integer "year", null: false
+    t.integer "year"
     t.boolean "is_public", default: true
     t.text "comment"
     t.integer "user_id", null: false

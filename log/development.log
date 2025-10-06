@@ -100,3 +100,384 @@ FOREIGN KEY ("category_id")
   [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251006054052') RETURNING "version" /*application='Myquote2'*/[0m
   [1m[36mTRANSACTION (9.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password_digest", "is_admin", "status", "created_at", "updated_at") VALUES ('John', 'Jones', 'admin@myquotes.com', '$2a$12$CgQp1UwNs0nFrQX02RPgYeqrt0GYCSsy1qdBQifAiaDa/B.88N9Vi', 1, 'Active', '2025-10-06 23:26:51.206584', '2025-10-06 23:26:51.206584') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password_digest", "is_admin", "status", "created_at", "updated_at") VALUES ('Vincent', 'Brown', 'vinceb@myemail.com', '$2a$12$Td3gTkF983gK6zVjq2MpCOdwDRWpKDadYWOZ1Vhe3n7zizG9o9sDO', 0, 'Active', '2025-10-06 23:26:51.454344', '2025-10-06 23:26:51.454344') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password_digest", "is_admin", "status", "created_at", "updated_at") VALUES ('Matt', 'Armstrong', 'matta@email.com', '$2a$12$OrGZCIt/arbTlh4nABeE3utxCMRfYG7Ya1ZSCa2iVsAU5ngCCWTbq', 0, 'Active', '2025-10-06 23:26:51.688673', '2025-10-06 23:26:51.688673') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Anonymous', NULL, NULL, NULL, 1, NULL, '2025-10-06 23:27:41.182994', '2025-10-06 23:27:41.182994') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('René', 'Descartes', 1596, 1650, 0, 'French philosopher, mathematician, father of modern philosophy.', '2025-10-06 23:27:41.185692', '2025-10-06 23:27:41.185692') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Socrates', NULL, -470, -399, 0, 'Greek philosopher known for the Socratic method and ethical inquiry.', '2025-10-06 23:27:41.188569', '2025-10-06 23:27:41.188569') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Aristotle', NULL, -384, -322, 0, 'Greek philosopher and student of Plato, tutor of Alexander the Great.', '2025-10-06 23:27:41.190868', '2025-10-06 23:27:41.190868') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Friedrich', 'Nietzsche', 1844, 1900, 0, 'German philosopher and cultural critic; pioneer of existentialism.', '2025-10-06 23:27:41.193371', '2025-10-06 23:27:41.193371') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Immanuel', 'Kant', 1724, 1804, 0, 'German philosopher of reason, metaphysics and ethics.', '2025-10-06 23:27:41.196175', '2025-10-06 23:27:41.196175') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('George', 'Berkeley', 1685, 1753, 0, 'Irish philosopher and bishop known for immaterialism.', '2025-10-06 23:27:41.198653', '2025-10-06 23:27:41.198653') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Martin', 'Heidegger', 1889, 1976, 0, 'German existential and phenomenological philosopher.', '2025-10-06 23:27:41.201666', '2025-10-06 23:27:41.201666') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Thomas', 'Hobbes', 1588, 1679, 0, 'English philosopher and political theorist.', '2025-10-06 23:27:41.203981', '2025-10-06 23:27:41.203981') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Henry David', 'Thoreau', 1817, 1862, 0, 'American transcendentalist philosopher and writer.', '2025-10-06 23:27:41.206735', '2025-10-06 23:27:41.206735') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Plato', NULL, -428, -348, 0, '', '2025-10-06 23:27:41.208785', '2025-10-06 23:27:41.208785') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Marcus', 'Aurelius', 121, 180, 0, 'Roman emperor and Stoic philosopher.', '2025-10-06 23:27:41.211214', '2025-10-06 23:27:41.211214') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("auth_fname", "auth_lname", "birth_year", "death_year", "is_anon", "bio", "created_at", "updated_at") VALUES ('Confucius', NULL, -551, -479, 0, 'Chinese philosopher, teacher and moral thinker.', '2025-10-06 23:27:41.213707', '2025-10-06 23:27:41.213707') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('I think, therefore I am.', 1637, 1, 'Foundation of modern rationalism and self-awareness.', 1, 2, '2025-10-06 23:34:34.656422', '2025-10-06 23:34:34.656422') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('The unexamined life is not worth living.', -399, 1, 'From Socrates’ trial; promotes reflection on moral purpose.', 2, 3, '2025-10-06 23:34:34.659827', '2025-10-06 23:34:34.659827') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('Man is by nature a political animal', -358, 1, 'Human beings are naturally social and civic-minded.', 3, 4, '2025-10-06 23:34:34.662438', '2025-10-06 23:34:34.662438') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('God is dead.', 1882, 1, 'Nietzsche’s challenge to traditional moral values.', 1, 5, '2025-10-06 23:34:34.665921', '2025-10-06 23:34:34.665921') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('The only thing that I know is that I know nothing.', -400, 1, 'Socratic paradox on intellectual humility.', 2, 2, '2025-10-06 23:34:34.668465', '2025-10-06 23:34:34.668465') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('Happiness is not an ideal of reason, but of imagination.', 1785, 1, NULL, 3, 6, '2025-10-06 23:34:34.670813', '2025-10-06 23:34:34.670813') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('To be is to be perceived.', 1710, 1, 'Berkeley’s idealism: existence depends on perception.', 2, 7, '2025-10-06 23:34:34.673371', '2025-10-06 23:34:34.673371') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('He who thinks great thoughts, often makes great errors.', 1832, 1, NULL, 2, 8, '2025-10-06 23:34:34.675698', '2025-10-06 23:34:34.675698') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('The life of man (in the state of nature) is solitary, poor, nasty, brutish, and short.', 1651, 1, 'From Leviathan, describing pre-societal life.', 2, 9, '2025-10-06 23:34:34.677752', '2025-10-06 23:34:34.677752') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('The price of anything is the amount of life you exchange for it.', 1849, 1, NULL, 2, 10, '2025-10-06 23:34:34.680368', '2025-10-06 23:34:34.680368') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('The measure of a man is what he does with power.', -359, 1, NULL, 3, 11, '2025-10-06 23:34:34.683051', '2025-10-06 23:34:34.683051') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('Knowledge which is acquired under compulsion obtains no hold on the mind.', -380, 1, 'From Plato’s Republic.', 3, 11, '2025-10-06 23:34:34.685619', '2025-10-06 23:34:34.685619') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('It is the mark of an educated mind to be able to entertain a thought without accepting it.', -350, 1, NULL, 1, 4, '2025-10-06 23:34:34.688321', '2025-10-06 23:34:34.688321') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('We are what we repeatedly do. Excellence, then, is not an act but a habit.', -340, 1, NULL, 3, 4, '2025-10-06 23:34:34.690785', '2025-10-06 23:34:34.690785') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('That which can be destroyed by the truth should be.', 1890, 1, NULL, 2, 1, '2025-10-06 23:34:34.695762', '2025-10-06 23:34:34.695762') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.8ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('The only way to deal with fear is to face it head-on.', NULL, 1, NULL, 1, 1, '2025-10-06 23:34:34.698261', '2025-10-06 23:34:34.698261') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" /* loading for pp */ LIMIT 11 /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 11 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 12 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 13 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 14 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 15 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 16 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 17 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Myquote2'*/[0m
+Migrating to ChangeYearInQuotes (20251006234238)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Myquote2'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Myquote2'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Myquote2'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Myquote2'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aquotes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quote" text NOT NULL, "year" integer NOT NULL, "is_public" boolean DEFAULT 1, "comment" text, "user_id" integer NOT NULL, "author_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Myquote2'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aquotes_on_author_id" ON "aquotes" ("author_id") /*application='Myquote2'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aquotes_on_user_id" ON "aquotes" ("user_id") /*application='Myquote2'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "aquotes" ("id","quote","year","is_public","comment","user_id","author_id","created_at","updated_at")
+                     SELECT "id","quote","year","is_public","comment","user_id","author_id","created_at","updated_at" FROM "quotes" /*application='Myquote2'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "quotes" /*application='Myquote2'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "quotes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quote" text NOT NULL, "year" integer, "is_public" boolean DEFAULT 1, "comment" text, "user_id" integer NOT NULL, "author_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_3d9d6db8c2"
+FOREIGN KEY ("author_id")
+  REFERENCES "authors" ("id")
+, CONSTRAINT "fk_rails_02b555fb4d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='Myquote2'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_quotes_on_user_id" ON "quotes" ("user_id") /*application='Myquote2'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_quotes_on_author_id" ON "quotes" ("author_id") /*application='Myquote2'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("id","quote","year","is_public","comment","user_id","author_id","created_at","updated_at")
+                     SELECT "id","quote","year","is_public","comment","user_id","author_id","created_at","updated_at" FROM "aquotes" /*application='Myquote2'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aquotes" /*application='Myquote2'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Myquote2'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Myquote2'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251006234238') RETURNING "version" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 15 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('The only way to deal with fear is to face it head-on.', NULL, 1, NULL, 1, 1, '2025-10-06 23:45:41.172207', '2025-10-06 23:45:41.172207') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('Act only according to that maxim whereby you can at the same time will that it should become a universal law.', 1785, 0, 'The categorical imperative.', 2, 6, '2025-10-06 23:45:41.186228', '2025-10-06 23:45:41.186228') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('All that we are is the result of what we have thought.', -500, 1, 'From the Dhammapada.', 2, 1, '2025-10-06 23:45:41.189108', '2025-10-06 23:45:41.189108') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('He who conquers himself is the mightiest warrior.', -400, 1, NULL, 3, 13, '2025-10-06 23:45:41.192486', '2025-10-06 23:45:41.192486') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('Even if I knew that tomorrow the world would go to pieces, I would still plant my apple tree.', NULL, 1, 'Hope in action despite uncertainty.', 2, 1, '2025-10-06 23:45:41.195215', '2025-10-06 23:45:41.195215') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('The end of labour is to gain leisure.', -350, 1, NULL, 1, 4, '2025-10-06 23:45:41.197886', '2025-10-06 23:45:41.197886') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('When the student is ready, the teacher will appear.', NULL, 0, NULL, 3, 1, '2025-10-06 23:45:41.200301', '2025-10-06 23:45:41.200301') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('Our life is what our thoughts make it.', NULL, 1, 'Stoic principle of perception.', 1, 12, '2025-10-06 23:45:41.202653', '2025-10-06 23:45:41.202653') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('We do not see things as they are, we see them as we are.', NULL, 1, NULL, 3, 1, '2025-10-06 23:45:41.208399', '2025-10-06 23:45:41.208399') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("cat_name", "created_at", "updated_at") VALUES ('Ethics', '2025-10-06 23:47:43.268793', '2025-10-06 23:47:43.268793') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("cat_name", "created_at", "updated_at") VALUES ('Epistemology', '2025-10-06 23:47:43.273082', '2025-10-06 23:47:43.273082') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("cat_name", "created_at", "updated_at") VALUES ('Metaphysics', '2025-10-06 23:47:43.275773', '2025-10-06 23:47:43.275773') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("cat_name", "created_at", "updated_at") VALUES ('Axiology', '2025-10-06 23:47:43.278222', '2025-10-06 23:47:43.278222') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("cat_name", "created_at", "updated_at") VALUES ('Logic', '2025-10-06 23:47:43.280881', '2025-10-06 23:47:43.280881') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("cat_name", "created_at", "updated_at") VALUES ('Political Philosophy', '2025-10-06 23:47:43.283300', '2025-10-06 23:47:43.283300') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("cat_name", "created_at", "updated_at") VALUES ('Aesthetics', '2025-10-06 23:47:43.285638', '2025-10-06 23:47:43.285638') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("cat_name", "created_at", "updated_at") VALUES ('Existentialism', '2025-10-06 23:47:43.287636', '2025-10-06 23:47:43.287636') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("cat_name", "created_at", "updated_at") VALUES ('Wisdom', '2025-10-06 23:47:43.290131', '2025-10-06 23:47:43.290131') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.2ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (1, 2, '2025-10-06 23:48:20.555253', '2025-10-06 23:48:20.555253') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (2, 1, '2025-10-06 23:48:20.560378', '2025-10-06 23:48:20.560378') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (3, 1, '2025-10-06 23:48:20.564950', '2025-10-06 23:48:20.564950') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.3ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (3, 6, '2025-10-06 23:48:20.568807', '2025-10-06 23:48:20.568807') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 4 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (4, 3, '2025-10-06 23:48:20.574823', '2025-10-06 23:48:20.574823') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 4 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (4, 4, '2025-10-06 23:48:20.578675', '2025-10-06 23:48:20.578675') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 5 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (5, 2, '2025-10-06 23:48:20.582116', '2025-10-06 23:48:20.582116') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 6 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (6, 1, '2025-10-06 23:48:20.586403', '2025-10-06 23:48:20.586403') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 6 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (6, 7, '2025-10-06 23:48:20.589766', '2025-10-06 23:48:20.589766') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (1.0ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 7 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.5ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (7, 3, '2025-10-06 23:48:20.594961', '2025-10-06 23:48:20.594961') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 8 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (8, 2, '2025-10-06 23:48:20.598623', '2025-10-06 23:48:20.598623') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 9 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (9, 6, '2025-10-06 23:48:20.601892', '2025-10-06 23:48:20.601892') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 10 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (10, 6, '2025-10-06 23:48:20.605770', '2025-10-06 23:48:20.605770') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 11 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.4ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (11, 1, '2025-10-06 23:48:20.610258', '2025-10-06 23:48:20.610258') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 11 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (11, 6, '2025-10-06 23:48:20.614466', '2025-10-06 23:48:20.614466') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 12 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (12, 2, '2025-10-06 23:48:20.618070', '2025-10-06 23:48:20.618070') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 13 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (13, 2, '2025-10-06 23:48:20.621276', '2025-10-06 23:48:20.621276') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (1.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 14 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.6ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (14, 1, '2025-10-06 23:48:20.625197', '2025-10-06 23:48:20.625197') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.6ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 15 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (15, 1, '2025-10-06 23:48:20.630276', '2025-10-06 23:48:20.630276') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 15 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (15, 5, '2025-10-06 23:48:20.634674', '2025-10-06 23:48:20.634674') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.6ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 16 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (16, 1, '2025-10-06 23:48:20.639660', '2025-10-06 23:48:20.639660') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 17 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.2ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (17, 1, '2025-10-06 23:48:20.644509', '2025-10-06 23:48:20.644509') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 17 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (17, 5, '2025-10-06 23:48:20.648889', '2025-10-06 23:48:20.648889') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 18 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (18, 3, '2025-10-06 23:48:20.653271', '2025-10-06 23:48:20.653271') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 18 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (18, 1, '2025-10-06 23:48:20.657673', '2025-10-06 23:48:20.657673') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 19 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.2ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (19, 1, '2025-10-06 23:48:20.662861', '2025-10-06 23:48:20.662861') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 20 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (20, 1, '2025-10-06 23:48:20.667338', '2025-10-06 23:48:20.667338') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 21 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (21, 4, '2025-10-06 23:48:20.671838', '2025-10-06 23:48:20.671838') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 21 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (21, 6, '2025-10-06 23:48:20.675243', '2025-10-06 23:48:20.675243') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 22 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.2ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (22, 4, '2025-10-06 23:48:20.680330', '2025-10-06 23:48:20.680330') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.8ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 23 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (23, 1, '2025-10-06 23:48:20.685275', '2025-10-06 23:48:20.685275') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (1.0ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 23 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (23, 4, '2025-10-06 23:48:20.690147', '2025-10-06 23:48:20.690147') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 24 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (24, 2, '2025-10-06 23:48:20.693768', '2025-10-06 23:48:20.693768') RETURNING "id" /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
