@@ -1,2 +1,16 @@
 <h1>Welcome to MyQuote</h1>
 <p>Your home for philosophical goodness.</p>
+<h3>Recently added quotes</h3>
+<hr />
+<% @quotes.each do |quote| %>
+    <div class="card bg-body-tertiary" style="margin-bottom:10px">
+    <div class="card-body">
+        <h4 class = "card-title">
+            <%= "#{quote.author.auth_fname} #{quote.author.auth_lname}" %></h4>
+        <p class="card-text">
+        <%= quote.quote %><br />
+        <a href="/quotes/<%= quote.id %>">Get more information</a>
+        </p>
+    </div>
+    </div>
+  <% end%>

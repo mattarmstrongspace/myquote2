@@ -481,3 +481,2282 @@ FOREIGN KEY ("user_id")
   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*application='Myquote2'*/[0m
   [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (24, 2, '2025-10-06 23:48:20.693768', '2025-10-06 23:48:20.693768') RETURNING "id" /*application='Myquote2'*/[0m
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-10-08 01:43:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Myquote2'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | GC: 0.0ms)
+Completed 200 OK in 213ms (Views: 51.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 01:45:01 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | GC: 0.0ms)
+Completed 200 OK in 55ms (Views: 41.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 01:47:14 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 01:48:33 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.9ms | GC: 1.9ms)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | GC: 20.4ms)
+Completed 200 OK in 62ms (Views: 47.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 28.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 01:49:14 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 01:54:21 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 7.5ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">RB Home</a> -->
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <%= link_to "Home", root_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Search</a></li>
+        </li>
+        <li class="nav-item">
+        <%= link_to "About", about_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+
+        <%# adding in route to navigation menu to allow user to sign up %>
+        <li><%= link_to 'Sign Up', new_user_path, class:"nav-link" %></li> 
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Sign In</a></li>
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Sign Out</a></li>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            User
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">My Account</a></li>
+            <li><a class="dropdown-item" href="#">My Recipes</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Add New Recipe</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Admin Home</a></li>
+            <%# adding in route to nav menu to allow admin to manage users %>
+            <li><%= link_to 'Manage Users', users_path, class:"dropdown-item %></li>
+          </ul>
+        </li>
+
+        <!--
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+        -->
+      </ul>
+      <!--
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      -->
+    </div>
+  </div>
+</nav>
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/student/Documents/rorapps/myquote2/app/views/layouts/_header.html.erb:54: syntax errors found
+  [2m52 | [m
+  [2m53 | [m        <!--
+[1;31m> [m[2m54 | [m        <li class="nav-item">
+  [2m   | [m                   [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                           [1;31m^[m unexpected string literal, expecting end-of-input
+[1;31m> [m[2m55 | [m          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+  [2m   | [m                    [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                             [1;31m^~~~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                                      [1;31m^~~~[m unexpected 'true', expecting end-of-input
+  [2m   | [m                                                          [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m56 | [m        </li>
+  [2m57 | [m        -->
+  [2m58 | [m      </ul>
+  [2m59 | [m      <!--
+[1;31m> [m[2m60 | [m      <form class="d-flex" role="search">
+  [2m   | [m                   [1;31m^[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                         [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                 [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+[1;31m> [m[2m61 | [m        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  [2m   | [m                      [1;31m^~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                   [1;31m^~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                       [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                               [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                                                    [1;31m^~~~~~[m unexpected constant, expecting end-of-input
+  [2m   | [m                                                                                        [1;31m^~~~~~[m unexpected constant, expecting end-of-input
+[1;31m> [m[2m62 | [m        <button class="btn btn-outline-success" type="submit">Search</button>
+  [2m   | [m                       [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                              [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                                      [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m63 | [m      </form>
+  [2m64 | [m      -->
+[2m  ~~~~~~[m
+  [2m67 | [m</nav>'.freeze;
+  [2m68 | [m@output_buffer.safe_append='<!-- END app/views/layouts/_header.html.erb -->';@output_buffer
+[1;31m> [m[2m69 | [m          end
+  [2m   | [m             [1;31m^[m unterminated string meets end of file
+[1;31m> [m[2m70 | [m
+  [2m   | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m   | [m[1;31m^[m expected a matching `)`
+
+  [2m   | [m[1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">RB Home</a> -->
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <%= link_to "Home", root_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Search</a></li>
+        </li>
+        <li class="nav-item">
+        <%= link_to "About", about_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+
+        <%# adding in route to navigation menu to allow user to sign up %>
+        <li><%= link_to 'Sign Up', new_user_path, class:"nav-link" %></li> 
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Sign In</a></li>
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Sign Out</a></li>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            User
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">My Account</a></li>
+            <li><a class="dropdown-item" href="#">My Recipes</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Add New Recipe</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Admin Home</a></li>
+            <%# adding in route to nav menu to allow admin to manage users %>
+            <li><%= link_to 'Manage Users', users_path, class:"dropdown-item %></li>
+          </ul>
+        </li>
+
+        <!--
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+        -->
+      </ul>
+      <!--
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      -->
+    </div>
+  </div>
+</nav>
+):
+1:    <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+2:      <div class="container-fluid">
+3:        <!-- <a class="navbar-brand" href="#">RB Home</a> -->
+4:        
+5:        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+6:          <span class="navbar-toggler-icon"></span>
+7:        </button>
+8:        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+9:          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+10:            <li class="nav-item">
+11:            <%= link_to "Home", root_path, class:"nav-link" %>
+12:            </li>
+13:            <li class="nav-item">
+14:            <li><a class="nav-link" href="#">Search</a></li>
+15:            </li>
+16:            <li class="nav-item">
+17:            <%= link_to "About", about_path, class:"nav-link" %>
+18:            </li>
+19:            <li class="nav-item">
+20:    
+21:            <%# adding in route to navigation menu to allow user to sign up %>
+22:            <li><%= link_to 'Sign Up', new_user_path, class:"nav-link" %></li> 
+23:            </li>
+24:            <li class="nav-item">
+25:            <li><a class="nav-link" href="#">Sign In</a></li>
+26:            </li>
+27:            <li class="nav-item">
+28:            <li><a class="nav-link" href="#">Sign Out</a></li>
+29:            </li>
+30:            <li class="nav-item dropdown">
+31:              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+32:                User
+33:              </a>
+34:              <ul class="dropdown-menu">
+35:                <li><a class="dropdown-item" href="#">My Account</a></li>
+36:                <li><a class="dropdown-item" href="#">My Recipes</a></li>
+37:                <li><hr class="dropdown-divider"></li>
+38:                <li><a class="dropdown-item" href="#">Add New Recipe</a></li>
+39:              </ul>
+40:            </li>
+41:    
+42:            <li class="nav-item dropdown">
+43:              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+44:                Admin
+45:              </a>
+46:              <ul class="dropdown-menu">
+47:                <li><a class="dropdown-item" href="#">Admin Home</a></li>
+48:                <%# adding in route to nav menu to allow admin to manage users %>
+49:                <li><%= link_to 'Manage Users', users_path, class:"dropdown-item %></li>
+50:              </ul>
+51:            </li>
+52:    
+53:            <!--
+54:            <li class="nav-item">
+55:              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+56:            </li>
+57:            -->
+58:          </ul>
+59:          <!--
+60:          <form class="d-flex" role="search">
+61:            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+62:            <button class="btn btn-outline-success" type="submit">Search</button>
+63:          </form>
+64:          -->
+65:        </div>
+66:      </div>
+67:    </nav>
+  
+app/views/layouts/_header.html.erb:54: syntax errors found
+app/views/layouts/application.html.erb:34
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/student/Documents/rorapps/myquote2/app/views/layouts/_header.html.erb:54: syntax errors found
+  [2m52 | [m
+  [2m53 | [m        <!--
+[1;31m> [m[2m54 | [m        <li class="nav-item">
+  [2m   | [m                   [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                           [1;31m^[m unexpected string literal, expecting end-of-input
+[1;31m> [m[2m55 | [m          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+  [2m   | [m                    [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                             [1;31m^~~~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                                      [1;31m^~~~[m unexpected 'true', expecting end-of-input
+  [2m   | [m                                                          [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m56 | [m        </li>
+  [2m57 | [m        -->
+  [2m58 | [m      </ul>
+  [2m59 | [m      <!--
+[1;31m> [m[2m60 | [m      <form class="d-flex" role="search">
+  [2m   | [m                   [1;31m^[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                         [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                 [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+[1;31m> [m[2m61 | [m        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  [2m   | [m                      [1;31m^~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                   [1;31m^~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                       [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                               [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                                                    [1;31m^~~~~~[m unexpected constant, expecting end-of-input
+  [2m   | [m                                                                                        [1;31m^~~~~~[m unexpected constant, expecting end-of-input
+[1;31m> [m[2m62 | [m        <button class="btn btn-outline-success" type="submit">Search</button>
+  [2m   | [m                       [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                              [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                                      [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m63 | [m      </form>
+  [2m64 | [m      -->
+[2m  ~~~~~~[m
+  [2m67 | [m</nav>'.freeze;
+  [2m68 | [m@output_buffer.safe_append='<!-- END app/views/layouts/_header.html.erb -->';@output_buffer
+[1;31m> [m[2m69 | [m          end
+  [2m   | [m             [1;31m^[m unterminated string meets end of file
+[1;31m> [m[2m70 | [m
+  [2m   | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m   | [m[1;31m^[m expected a matching `)`
+
+  [2m   | [m[1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+):
+  
+app/views/layouts/_header.html.erb:54: syntax errors found
+app/views/layouts/application.html.erb:34
+Started GET "/" for 127.0.0.1 at 2025-10-08 01:54:27 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">RB Home</a> -->
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <%= link_to "Home", root_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Search</a></li>
+        </li>
+        <li class="nav-item">
+        <%= link_to "About", about_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+
+        <%# adding in route to navigation menu to allow user to sign up %>
+        <li><%= link_to 'Sign Up', new_user_path, class:"nav-link" %></li> 
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Sign In</a></li>
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Sign Out</a></li>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            User
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">My Account</a></li>
+            <li><a class="dropdown-item" href="#">My Recipes</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Add New Recipe</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Admin Home</a></li>
+            <%# adding in route to nav menu to allow admin to manage users %>
+            <li><%= link_to 'Manage Users', users_path, class:"dropdown-item %></li>
+          </ul>
+        </li>
+
+        <!--
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+        -->
+      </ul>
+      <!--
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      -->
+    </div>
+  </div>
+</nav>
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/student/Documents/rorapps/myquote2/app/views/layouts/_header.html.erb:54: syntax errors found
+  [2m52 | [m
+  [2m53 | [m        <!--
+[1;31m> [m[2m54 | [m        <li class="nav-item">
+  [2m   | [m                   [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                           [1;31m^[m unexpected string literal, expecting end-of-input
+[1;31m> [m[2m55 | [m          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+  [2m   | [m                    [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                             [1;31m^~~~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                                      [1;31m^~~~[m unexpected 'true', expecting end-of-input
+  [2m   | [m                                                          [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m56 | [m        </li>
+  [2m57 | [m        -->
+  [2m58 | [m      </ul>
+  [2m59 | [m      <!--
+[1;31m> [m[2m60 | [m      <form class="d-flex" role="search">
+  [2m   | [m                   [1;31m^[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                         [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                 [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+[1;31m> [m[2m61 | [m        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  [2m   | [m                      [1;31m^~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                   [1;31m^~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                       [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                               [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                                                    [1;31m^~~~~~[m unexpected constant, expecting end-of-input
+  [2m   | [m                                                                                        [1;31m^~~~~~[m unexpected constant, expecting end-of-input
+[1;31m> [m[2m62 | [m        <button class="btn btn-outline-success" type="submit">Search</button>
+  [2m   | [m                       [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                              [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                                      [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m63 | [m      </form>
+  [2m64 | [m      -->
+[2m  ~~~~~~[m
+  [2m67 | [m</nav>'.freeze;
+  [2m68 | [m@output_buffer.safe_append='<!-- END app/views/layouts/_header.html.erb -->';@output_buffer
+[1;31m> [m[2m69 | [m          end
+  [2m   | [m             [1;31m^[m unterminated string meets end of file
+[1;31m> [m[2m70 | [m
+  [2m   | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m   | [m[1;31m^[m expected a matching `)`
+
+  [2m   | [m[1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">RB Home</a> -->
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <%= link_to "Home", root_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Search</a></li>
+        </li>
+        <li class="nav-item">
+        <%= link_to "About", about_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+
+        <%# adding in route to navigation menu to allow user to sign up %>
+        <li><%= link_to 'Sign Up', new_user_path, class:"nav-link" %></li> 
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Sign In</a></li>
+        </li>
+        <li class="nav-item">
+        <li><a class="nav-link" href="#">Sign Out</a></li>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            User
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">My Account</a></li>
+            <li><a class="dropdown-item" href="#">My Recipes</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Add New Recipe</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Admin Home</a></li>
+            <%# adding in route to nav menu to allow admin to manage users %>
+            <li><%= link_to 'Manage Users', users_path, class:"dropdown-item %></li>
+          </ul>
+        </li>
+
+        <!--
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+        -->
+      </ul>
+      <!--
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      -->
+    </div>
+  </div>
+</nav>
+):
+1:    <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+2:      <div class="container-fluid">
+3:        <!-- <a class="navbar-brand" href="#">RB Home</a> -->
+4:        
+5:        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+6:          <span class="navbar-toggler-icon"></span>
+7:        </button>
+8:        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+9:          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+10:            <li class="nav-item">
+11:            <%= link_to "Home", root_path, class:"nav-link" %>
+12:            </li>
+13:            <li class="nav-item">
+14:            <li><a class="nav-link" href="#">Search</a></li>
+15:            </li>
+16:            <li class="nav-item">
+17:            <%= link_to "About", about_path, class:"nav-link" %>
+18:            </li>
+19:            <li class="nav-item">
+20:    
+21:            <%# adding in route to navigation menu to allow user to sign up %>
+22:            <li><%= link_to 'Sign Up', new_user_path, class:"nav-link" %></li> 
+23:            </li>
+24:            <li class="nav-item">
+25:            <li><a class="nav-link" href="#">Sign In</a></li>
+26:            </li>
+27:            <li class="nav-item">
+28:            <li><a class="nav-link" href="#">Sign Out</a></li>
+29:            </li>
+30:            <li class="nav-item dropdown">
+31:              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+32:                User
+33:              </a>
+34:              <ul class="dropdown-menu">
+35:                <li><a class="dropdown-item" href="#">My Account</a></li>
+36:                <li><a class="dropdown-item" href="#">My Recipes</a></li>
+37:                <li><hr class="dropdown-divider"></li>
+38:                <li><a class="dropdown-item" href="#">Add New Recipe</a></li>
+39:              </ul>
+40:            </li>
+41:    
+42:            <li class="nav-item dropdown">
+43:              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+44:                Admin
+45:              </a>
+46:              <ul class="dropdown-menu">
+47:                <li><a class="dropdown-item" href="#">Admin Home</a></li>
+48:                <%# adding in route to nav menu to allow admin to manage users %>
+49:                <li><%= link_to 'Manage Users', users_path, class:"dropdown-item %></li>
+50:              </ul>
+51:            </li>
+52:    
+53:            <!--
+54:            <li class="nav-item">
+55:              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+56:            </li>
+57:            -->
+58:          </ul>
+59:          <!--
+60:          <form class="d-flex" role="search">
+61:            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+62:            <button class="btn btn-outline-success" type="submit">Search</button>
+63:          </form>
+64:          -->
+65:        </div>
+66:      </div>
+67:    </nav>
+  
+app/views/layouts/_header.html.erb:54: syntax errors found
+app/views/layouts/application.html.erb:34
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/student/Documents/rorapps/myquote2/app/views/layouts/_header.html.erb:54: syntax errors found
+  [2m52 | [m
+  [2m53 | [m        <!--
+[1;31m> [m[2m54 | [m        <li class="nav-item">
+  [2m   | [m                   [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                           [1;31m^[m unexpected string literal, expecting end-of-input
+[1;31m> [m[2m55 | [m          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+  [2m   | [m                    [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                             [1;31m^~~~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                                      [1;31m^~~~[m unexpected 'true', expecting end-of-input
+  [2m   | [m                                                          [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m56 | [m        </li>
+  [2m57 | [m        -->
+  [2m58 | [m      </ul>
+  [2m59 | [m      <!--
+[1;31m> [m[2m60 | [m      <form class="d-flex" role="search">
+  [2m   | [m                   [1;31m^[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                         [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                 [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+[1;31m> [m[2m61 | [m        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  [2m   | [m                      [1;31m^~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                   [1;31m^~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                       [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                               [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                                                    [1;31m^~~~~~[m unexpected constant, expecting end-of-input
+  [2m   | [m                                                                                        [1;31m^~~~~~[m unexpected constant, expecting end-of-input
+[1;31m> [m[2m62 | [m        <button class="btn btn-outline-success" type="submit">Search</button>
+  [2m   | [m                       [1;31m^~~[m unexpected local variable or method, expecting end-of-input
+  [2m   | [m                                              [1;31m^[m unexpected string literal, expecting end-of-input
+  [2m   | [m                                                      [1;31m^~~~~~[m unexpected local variable or method, expecting end-of-input
+  [2m63 | [m      </form>
+  [2m64 | [m      -->
+[2m  ~~~~~~[m
+  [2m67 | [m</nav>'.freeze;
+  [2m68 | [m@output_buffer.safe_append='<!-- END app/views/layouts/_header.html.erb -->';@output_buffer
+[1;31m> [m[2m69 | [m          end
+  [2m   | [m             [1;31m^[m unterminated string meets end of file
+[1;31m> [m[2m70 | [m
+  [2m   | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m   | [m[1;31m^[m expected a matching `)`
+
+  [2m   | [m[1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+):
+  
+app/views/layouts/_header.html.erb:54: syntax errors found
+app/views/layouts/application.html.erb:34
+Started GET "/" for 127.0.0.1 at 2025-10-08 01:58:26 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 8.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 01:58:46 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 35.3ms | GC: 1.6ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 40.5ms | GC: 1.6ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | GC: 1.6ms)
+Completed 200 OK in 124ms (Views: 44.1ms | ActiveRecord: 2.3ms (0 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:07:42 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 15.9ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 17.0ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 25.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:10:21 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.1ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 0.4ms)
+Completed 200 OK in 33ms (Views: 16.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:10:24 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | GC: 0.3ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.7ms | GC: 0.3ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.3ms)
+Completed 200 OK in 18ms (Views: 6.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:10:25 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 02:14:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Myquote2'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | GC: 0.0ms)
+Completed 200 OK in 56ms (Views: 26.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:14:43 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.7ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 14.9ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | GC: 0.0ms)
+Completed 200 OK in 65ms (Views: 17.7ms | ActiveRecord: 2.4ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:15:30 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 0.0ms)
+Completed 200 OK in 46ms (Views: 11.3ms | ActiveRecord: 1.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:17:23 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 21.1ms | GC: 12.3ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 26.1ms | GC: 16.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | GC: 32.0ms)
+Completed 200 OK in 78ms (Views: 52.9ms | ActiveRecord: 1.8ms (0 queries, 0 cached) | GC: 34.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:17:58 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.9ms | GC: 0.5ms)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 0.9ms)
+Completed 200 OK in 31ms (Views: 13.2ms | ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 02:17:59 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:20:37 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 14.0ms | ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:34:29 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.8ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | GC: 27.2ms)
+Completed 200 OK in 63ms (Views: 42.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 27.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-10-08 02:34:52 +0000
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"fname" => "Bob", "lname" => "Builder", "email" => "[FILTERED]", "password" => "[FILTERED]", "is_admin" => "false", "status" => "Active"}, "commit" => "Submit"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Myquote2',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password_digest", "is_admin", "status", "created_at", "updated_at") VALUES ('Bob', 'Builder', 'bob@builder.com', '$2a$12$2WCc4zEZ7W95apVStbEPA.FvZady/9Cs7xUVGevEke2/cz/Ftl8ZC', 0, 'Active', '2025-10-08 02:34:53.121148', '2025-10-08 02:34:53.121148') RETURNING "id" /*action='create',application='Myquote2',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Myquote2',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 274ms (ActiveRecord: 12.4ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2025-10-08 02:34:53 +0000
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id" => "4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='show',application='Myquote2',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 63ms (Views: 13.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2025-10-08 02:35:12 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "4"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='edit',application='Myquote2',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.2ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 6.3ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2025-10-08 02:35:15 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='show',application='Myquote2',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 4.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:35:15 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 13.7ms | GC: 0.5ms)
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | GC: 0.5ms)
+Completed 200 OK in 35ms (Views: 18.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:35:59 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.3ms)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.3ms)
+Completed 200 OK in 20ms (Views: 7.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 02:36:37 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 02:36:38 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.5ms)
+Completed 200 OK in 13ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:36:40 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.5ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.1ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 02:36:50 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.2ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 7.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:37:05 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.4ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:38:10 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 12.8ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 19.4ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:40:27 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 13.2ms | GC: 0.3ms)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | GC: 0.3ms)
+Completed 200 OK in 34ms (Views: 19.1ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2025-10-08 02:41:54 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Myquote2'*/[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='Myquote2',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 12.6ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | GC: 0.0ms)
+Completed 200 OK in 100ms (Views: 40.4ms | ActiveRecord: 3.1ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 02:41:58 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 4.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:42:04 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2025-10-08 02:42:06 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 5.9ms | ActiveRecord: 8.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:42:17 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 9.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:44:07 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 22.0ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | GC: 0.0ms)
+Completed 200 OK in 49ms (Views: 28.7ms | ActiveRecord: 2.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:47:14 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 15.8ms | GC: 1.3ms)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | GC: 4.9ms)
+Completed 200 OK in 48ms (Views: 27.0ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 13.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2025-10-08 02:47:26 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 11.2ms | GC: 1.1ms)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | GC: 1.1ms)
+Completed 200 OK in 35ms (Views: 17.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:47:29 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 4.7ms | GC: 1.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 1.0ms)
+Completed 200 OK in 20ms (Views: 7.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-10-08 02:49:51 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Myquote2',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 11.0ms | GC: 0.4ms)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | GC: 0.4ms)
+Completed 200 OK in 34ms (Views: 15.5ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2025-10-08 02:49:53 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='Myquote2',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 5.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 02:59:15 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (1.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 7.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::AssociationNotFoundError (Association named 'category' was not found on Quote; perhaps you misspelled it?):
+  
+app/controllers/home_controller.rb:3:in 'HomeController#index'
+Started GET "/" for 127.0.0.1 at 2025-10-08 02:59:16 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+  
+ActiveRecord::AssociationNotFoundError (Association named 'category' was not found on Quote; perhaps you misspelled it?):
+  
+app/controllers/home_controller.rb:3:in 'HomeController#index'
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:00:26 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (2.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.2ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 4.8ms (4 queries, 0 cached) | GC: 16.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'author' for an instance of #<Class:0x00007a198f665008>)
+Caused by: NameError (undefined local variable or method 'author' for an instance of #<Class:0x00007a198f665008>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'author' for an instance of #<Class:0x00007a198f665008>):
+     5: <% @quotes.each do |quote| %>
+     6:     <div class="card bg-body-tertiary" style="margin-bottom:10px">
+     7:     <div class="card-body">
+     8:         <h4 class = "card-title"><%= author.title %></h4>
+     9:         <p class="card text"><%e quote.quote %><br />[<a href="/quotes/<%=quote.id %>"Get more information</a>]</p>
+    10:     </div>
+    11:     </div>
+  
+app/views/home/index.html.erb:8
+app/views/home/index.html.erb:5:in 'Array#each'
+app/views/home/index.html.erb:5
+
+Information for cause: NameError (undefined local variable or method 'author' for an instance of #<Class:0x00007a198f665008>):
+  
+app/views/home/index.html.erb:8
+app/views/home/index.html.erb:5:in 'Array#each'
+app/views/home/index.html.erb:5
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:00:28 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.1ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'author' for an instance of #<Class:0x00007a198f665008>)
+Caused by: NameError (undefined local variable or method 'author' for an instance of #<Class:0x00007a198f665008>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'author' for an instance of #<Class:0x00007a198f665008>):
+     5: <% @quotes.each do |quote| %>
+     6:     <div class="card bg-body-tertiary" style="margin-bottom:10px">
+     7:     <div class="card-body">
+     8:         <h4 class = "card-title"><%= author.title %></h4>
+     9:         <p class="card text"><%e quote.quote %><br />[<a href="/quotes/<%=quote.id %>"Get more information</a>]</p>
+    10:     </div>
+    11:     </div>
+  
+app/views/home/index.html.erb:8
+app/views/home/index.html.erb:5:in 'Array#each'
+app/views/home/index.html.erb:5
+
+Information for cause: NameError (undefined local variable or method 'author' for an instance of #<Class:0x00007a198f665008>):
+  
+app/views/home/index.html.erb:8
+app/views/home/index.html.erb:5:in 'Array#each'
+app/views/home/index.html.erb:5
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:02:52 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (1.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.3ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.9ms | GC: 6.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | GC: 6.0ms)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 4.8ms (4 queries, 0 cached) | GC: 39.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'author' for an instance of #<Class:0x00007a1999175ca0>)
+Caused by: NameError (undefined local variable or method 'author' for an instance of #<Class:0x00007a1999175ca0>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'author' for an instance of #<Class:0x00007a1999175ca0>):
+     5: <% @quotes.each do |quote| %>
+     6:     <div class="card bg-body-tertiary" style="margin-bottom:10px">
+     7:     <div class="card-body">
+     8:         <h4 class = "card-title"><%= author.auth_fname %></h4>
+     9:         <p class="card text"><%e quote.quote %><br />[<a href="/quotes/<%=quote.id %>"Get more information</a>]</p>
+    10:     </div>
+    11:     </div>
+  
+app/views/home/index.html.erb:8
+app/views/home/index.html.erb:5:in 'Array#each'
+app/views/home/index.html.erb:5
+
+Information for cause: NameError (undefined local variable or method 'author' for an instance of #<Class:0x00007a1999175ca0>):
+  
+app/views/home/index.html.erb:8
+app/views/home/index.html.erb:5:in 'Array#each'
+app/views/home/index.html.erb:5
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:04:24 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (1.0ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.2ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 3.4ms (4 queries, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method 'e' for an instance of #<Class:0x00007a198f6d1d70>)
+Caused by: NoMethodError (undefined method 'e' for an instance of #<Class:0x00007a198f6d1d70>)
+
+Information for: ActionView::Template::Error (undefined method 'e' for an instance of #<Class:0x00007a198f6d1d70>):
+     6:     <div class="card bg-body-tertiary" style="margin-bottom:10px">
+     7:     <div class="card-body">
+     8:         <h4 class = "card-title"><%= quote.author.auth_fname %></h4>
+     9:         <p class="card text"><%e quote.quote %><br />[<a href="/quotes/<%=quote.id %>"Get more information</a>]</p>
+    10:     </div>
+    11:     </div>
+    12:   <% end%>
+  
+app/views/home/index.html.erb:9
+app/views/home/index.html.erb:5:in 'Array#each'
+app/views/home/index.html.erb:5
+
+Information for cause: NoMethodError (undefined method 'e' for an instance of #<Class:0x00007a198f6d1d70>):
+  
+app/views/home/index.html.erb:9
+app/views/home/index.html.erb:5:in 'Array#each'
+app/views/home/index.html.erb:5
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:05:01 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (1.1ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.2ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 8.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | GC: 9.5ms)
+Completed 200 OK in 124ms (Views: 35.0ms | ActiveRecord: 3.6ms (4 queries, 0 cached) | GC: 9.5ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:05:05 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 7.8ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | GC: 0.0ms)
+Completed 200 OK in 55ms (Views: 13.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 3.0ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:05:07 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 9.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 3.1ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:05:08 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 3.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/2" for 127.0.0.1 at 2025-10-08 03:05:10 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 2 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 3.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:05:13 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 4.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:05:59 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (2.6ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.2ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 5.2ms (4 queries, 0 cached) | GC: 24.2ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to MyQuote</h1>
+<p>Your home for philosophical goodness.</p>
+<h3>Recently added quotes</h3>
+<hr />
+<% @quotes.each do |quote| %>
+    <div class="card bg-body-tertiary" style="margin-bottom:10px">
+    <div class="card-body">
+        <h4 class = "card-title"><%= quote.author.auth_fname, quote.author.auth_lname %></h4>
+        <p class="card text"><%= quote.quote %><br />[<a href="/quotes/<%=quote.id %>"Get more information</a>]</p>
+    </div>
+    </div>
+  <% end%>
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/student/Documents/rorapps/myquote2/app/views/home/index.html.erb:8: syntax error found
+  [2m6 | [m @output_buffer.safe_append='    <div class="card bg-body-tertiary" style="margin-bottom:10px">
+  [2m7 | [m    <div class="card-body">
+[1;31m> [m[2m8 | [m... ( quote.author.auth_fname, quote.author.auth_lname ); @output_buffer.safe_append=' ...
+  [2m  | [m    [1;31m^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m unexpected write target
+  [2m9 | [m        <p class="card text">'.freeze; @output_buffer.append=( quote.quote ); @output_buffer.safe_append='<br />[<a href="/quotes/'.freeze; @output_buffer.append=(quote.id ); @output_buffer.safe_append='"Get more information</a>]</p>
+  [2m10 | [m    </div>
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Welcome to MyQuote</h1>
+<p>Your home for philosophical goodness.</p>
+<h3>Recently added quotes</h3>
+<hr />
+<% @quotes.each do |quote| %>
+    <div class="card bg-body-tertiary" style="margin-bottom:10px">
+    <div class="card-body">
+        <h4 class = "card-title"><%= quote.author.auth_fname, quote.author.auth_lname %></h4>
+        <p class="card text"><%= quote.quote %><br />[<a href="/quotes/<%=quote.id %>"Get more information</a>]</p>
+    </div>
+    </div>
+  <% end%>
+
+):
+1:    <h1>Welcome to MyQuote</h1>
+2:    <p>Your home for philosophical goodness.</p>
+3:    <h3>Recently added quotes</h3>
+4:    <hr />
+5:    <% @quotes.each do |quote| %>
+6:        <div class="card bg-body-tertiary" style="margin-bottom:10px">
+7:        <div class="card-body">
+8:            <h4 class = "card-title"><%= quote.author.auth_fname, quote.author.auth_lname %></h4>
+9:            <p class="card text"><%= quote.quote %><br />[<a href="/quotes/<%=quote.id %>"Get more information</a>]</p>
+10:        </div>
+11:        </div>
+12:      <% end%>
+  
+app/views/home/index.html.erb:8: syntax error found
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/student/Documents/rorapps/myquote2/app/views/home/index.html.erb:8: syntax error found
+  [2m6 | [m @output_buffer.safe_append='    <div class="card bg-body-tertiary" style="margin-bottom:10px">
+  [2m7 | [m    <div class="card-body">
+[1;31m> [m[2m8 | [m... ( quote.author.auth_fname, quote.author.auth_lname ); @output_buffer.safe_append=' ...
+  [2m  | [m    [1;31m^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m unexpected write target
+  [2m9 | [m        <p class="card text">'.freeze; @output_buffer.append=( quote.quote ); @output_buffer.safe_append='<br />[<a href="/quotes/'.freeze; @output_buffer.append=(quote.id ); @output_buffer.safe_append='"Get more information</a>]</p>
+  [2m10 | [m    </div>
+):
+  
+app/views/home/index.html.erb:8: syntax error found
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:07:37 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (1.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (1.3ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | GC: 1.8ms)
+Completed 200 OK in 128ms (Views: 21.3ms | ActiveRecord: 4.9ms (4 queries, 0 cached) | GC: 14.9ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:07:41 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 6.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 03:07:41 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.6ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 14.5ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | GC: 0.0ms)
+Completed 200 OK in 54ms (Views: 17.8ms | ActiveRecord: 0.6ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:07:45 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.6ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 49ms (Views: 10.8ms | ActiveRecord: 1.0ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:07:51 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 4.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/1/edit" for 127.0.0.1 at 2025-10-08 03:07:52 +0000
+Processing by QuotesController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='edit',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/edit.html.erb within layouts/application
+  Rendered quotes/_form.html.erb (Duration: 23.9ms | GC: 1.6ms)
+  Rendered quotes/edit.html.erb within layouts/application (Duration: 35.5ms | GC: 1.6ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | GC: 1.6ms)
+Completed 200 OK in 59ms (Views: 38.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:10:26 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (2.1ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (3.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.2ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | GC: 0.4ms)
+Completed 200 OK in 132ms (Views: 20.0ms | ActiveRecord: 11.2ms (4 queries, 0 cached) | GC: 6.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-10-08 03:10:31 +0000
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.4ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 10.0ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:10:33 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 9.4ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:10:41 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 5.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/2" for 127.0.0.1 at 2025-10-08 03:11:01 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 2 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 3.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:11:10 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 3.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/2" for 127.0.0.1 at 2025-10-08 03:11:12 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 2 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 7.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/3" for 127.0.0.1 at 2025-10-08 03:11:12 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "3"}
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 3 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 6.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/3" for 127.0.0.1 at 2025-10-08 03:11:13 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "3"}
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 3 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 5.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:16:14 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (1.0ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 5 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.2ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.7ms | GC: 1.5ms)
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | GC: 12.1ms)
+Completed 200 OK in 184ms (Views: 46.3ms | ActiveRecord: 4.0ms (4 queries, 0 cached) | GC: 58.4ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:16:18 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 5.8ms | GC: 1.8ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 3.0ms)
+Completed 200 OK in 35ms (Views: 11.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 11.2ms)
+
+
+Started GET "/quotes/2" for 127.0.0.1 at 2025-10-08 03:16:25 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 2 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 5.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:17:17 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 7.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 2.6ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2025-10-08 03:17:17 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 1 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 4.2ms | GC: 2.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 2.0ms)
+Completed 200 OK in 20ms (Views: 6.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:20:31 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (1.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 10 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5, 6, 7, 8, 9, 10) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.2ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4, 7) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 0.0ms)
+Completed 200 OK in 99ms (Views: 11.7ms | ActiveRecord: 4.7ms (4 queries, 0 cached) | GC: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-08 03:36:24 +0000
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (1.7ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 10 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 3, 4, 5, 6, 7, 8, 9, 10) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.2ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4, 7) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.2ms)
+Completed 200 OK in 48ms (Views: 6.4ms | ActiveRecord: 2.3ms (4 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2025-10-08 03:36:27 +0000
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.3ms)
+Completed 200 OK in 21ms (Views: 5.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/search?category_query=ethics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:36:31 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "ethics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 23.4ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Quote' to association named 'catogerizations'; perhaps you misspelled it?)
+Caused by: ActiveRecord::ConfigurationError (Can't join 'Quote' to association named 'catogerizations'; perhaps you misspelled it?)
+
+Information for: ActionView::Template::Error (Can't join 'Quote' to association named 'catogerizations'; perhaps you misspelled it?):
+     7:     <%= submit_tag 'Search Quotes', class: "btn btn-primary" %>
+     8: 
+     9:     <% if params[:category_query].present? %>
+    10:     <% if @quotematch.present? %>
+    11:         <h4 style="padding-top: 15px;">Results:</h4>
+    12:             <% @quoteematch.each do |recipe| %>
+    13:             <h5 class="text-primary"><%= quote.quote %></h5>
+  
+app/views/search/index.html.erb:10
+app/views/search/index.html.erb:3
+
+Information for cause: ActiveRecord::ConfigurationError (Can't join 'Quote' to association named 'catogerizations'; perhaps you misspelled it?):
+  
+app/views/search/index.html.erb:10
+app/views/search/index.html.erb:3
+Started GET "/search" for 127.0.0.1 at 2025-10-08 03:39:41 +0000
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 7.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search?category_query=ethics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:39:46 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "ethics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%ethics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  Rendered search/index.html.erb within layouts/application (Duration: 27.7ms | GC: 6.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | GC: 6.0ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 6.0ms)
+
+
+  
+ActionView::Template::Error (undefined method 'each' for nil)
+Caused by: NoMethodError (undefined method 'each' for nil)
+
+Information for: ActionView::Template::Error (undefined method 'each' for nil):
+     9:     <% if params[:category_query].present? %>
+    10:     <% if @quotematch.present? %>
+    11:         <h4 style="padding-top: 15px;">Results:</h4>
+    12:             <% @quoteematch.each do |recipe| %>
+    13:             <h5 class="text-primary"><%= quote.quote %></h5>
+    14:             <p><%= quote.quote %> [<a href="/quotes/<%= quote.id %>">Read more details</a>]</p>
+    15:             <br />
+  
+app/views/search/index.html.erb:12
+app/views/search/index.html.erb:3
+
+Information for cause: NoMethodError (undefined method 'each' for nil):
+  
+app/views/search/index.html.erb:12
+app/views/search/index.html.erb:3
+Started GET "/search" for 127.0.0.1 at 2025-10-08 03:40:28 +0000
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search?category_query=ethics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:40:30 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "ethics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%ethics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  Rendered search/index.html.erb within layouts/application (Duration: 22.1ms | GC: 7.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | GC: 7.2ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 7.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'quote' for an instance of #<Class:0x00007a198f873f20>)
+Caused by: NameError (undefined local variable or method 'quote' for an instance of #<Class:0x00007a198f873f20>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'quote' for an instance of #<Class:0x00007a198f873f20>):
+    10:     <% if @quotematch.present? %>
+    11:         <h4 style="padding-top: 15px;">Results:</h4>
+    12:             <% @quotematch.each do |recipe| %>
+    13:             <h5 class="text-primary"><%= quote.quote %></h5>
+    14:             <p><%= quote.quote %> [<a href="/quotes/<%= quote.id %>">Read more details</a>]</p>
+    15:             <br />
+    16:             <% end %>
+  
+app/views/search/index.html.erb:13
+app/views/search/index.html.erb:12
+app/views/search/index.html.erb:3
+
+Information for cause: NameError (undefined local variable or method 'quote' for an instance of #<Class:0x00007a198f873f20>):
+  
+app/views/search/index.html.erb:13
+app/views/search/index.html.erb:12
+app/views/search/index.html.erb:3
+Started GET "/search" for 127.0.0.1 at 2025-10-08 03:41:20 +0000
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 6.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search?category_query=ethics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:41:22 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "ethics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%ethics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  Rendered search/index.html.erb within layouts/application (Duration: 25.0ms | GC: 7.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | GC: 7.4ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 7.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'quote' for an instance of #<Class:0x00007a19994b3a20>)
+Caused by: NameError (undefined local variable or method 'quote' for an instance of #<Class:0x00007a19994b3a20>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'quote' for an instance of #<Class:0x00007a19994b3a20>):
+    10:     <% if @quotematch.present? %>
+    11:         <h4 style="padding-top: 15px;">Results:</h4>
+    12:             <% @quotematch.each do |recipe| %>
+    13:             <h5 class="text-primary"><%= quote.text %></h5>
+    14:             <p><%= quote.text %> [<a href="/quotes/<%= quote.id %>">Read more details</a>]</p>
+    15:             <br />
+    16:             <% end %>
+  
+app/views/search/index.html.erb:13
+app/views/search/index.html.erb:12
+app/views/search/index.html.erb:3
+
+Information for cause: NameError (undefined local variable or method 'quote' for an instance of #<Class:0x00007a19994b3a20>):
+  
+app/views/search/index.html.erb:13
+app/views/search/index.html.erb:12
+app/views/search/index.html.erb:3
+Started GET "/search" for 127.0.0.1 at 2025-10-08 03:44:47 +0000
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 6.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search?category_query=ethics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:44:50 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "ethics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%ethics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  Rendered search/index.html.erb within layouts/application (Duration: 16.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method 'text' for an instance of Quote)
+Caused by: NoMethodError (undefined method 'text' for an instance of Quote)
+
+Information for: ActionView::Template::Error (undefined method 'text' for an instance of Quote):
+    10:     <% if @quotematch.present? %>
+    11:         <h4 style="padding-top: 15px;">Results:</h4>
+    12:             <% @quotematch.each do |quote| %>
+    13:             <h5 class="text-primary"><%= quote.text %></h5>
+    14:             <p><%= quote.text %> [<a href="/quotes/<%= quote.id %>">Read more details</a>]</p>
+    15:             <br />
+    16:             <% end %>
+  
+app/views/search/index.html.erb:13
+app/views/search/index.html.erb:12
+app/views/search/index.html.erb:3
+
+Information for cause: NoMethodError (undefined method 'text' for an instance of Quote):
+  
+app/views/search/index.html.erb:13
+app/views/search/index.html.erb:12
+app/views/search/index.html.erb:3
+Started GET "/search" for 127.0.0.1 at 2025-10-08 03:45:33 +0000
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 3.0ms)
+Completed 200 OK in 21ms (Views: 10.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.0ms)
+
+
+Started GET "/search?category_query=ethics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:45:35 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "ethics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%ethics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  Rendered search/index.html.erb within layouts/application (Duration: 19.3ms | GC: 3.5ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | GC: 3.5ms)
+Completed 200 OK in 36ms (Views: 20.1ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 5.1ms)
+
+
+Started GET "/quotes/15" for 127.0.0.1 at 2025-10-08 03:45:49 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "15"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 15 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 4.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search?category_query=ethics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:47:03 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "ethics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%ethics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  Rendered search/index.html.erb within layouts/application (Duration: 30.0ms | GC: 12.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | GC: 12.7ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 12.7ms)
+
+
+  
+ActionView::Template::Error (undefined method 'author_fname' for an instance of Quote)
+Caused by: NoMethodError (undefined method 'author_fname' for an instance of Quote)
+
+Information for: ActionView::Template::Error (undefined method 'author_fname' for an instance of Quote):
+    10:     <% if @quotematch.present? %>
+    11:         <h4 style="padding-top: 15px;">Results:</h4>
+    12:             <% @quotematch.each do |quote| %>
+    13:             <h5 class="text-primary"><%= quote.author_fname %></h5>
+    14:             <p><%= quote.quote %> [<a href="/quotes/<%= quote.id %>">Read more details</a>]</p>
+    15:             <br />
+    16:             <% end %>
+  
+app/views/search/index.html.erb:13
+app/views/search/index.html.erb:12
+app/views/search/index.html.erb:3
+
+Information for cause: NoMethodError (undefined method 'author_fname' for an instance of Quote):
+  
+app/views/search/index.html.erb:13
+app/views/search/index.html.erb:12
+app/views/search/index.html.erb:3
+Started GET "/search?category_query=ethics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:47:53 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "ethics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%ethics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 3 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 4 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 4 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 11 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 12 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 13 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  Rendered search/index.html.erb within layouts/application (Duration: 55.9ms | GC: 9.4ms)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 63.8ms | GC: 11.5ms)
+Completed 200 OK in 79ms (Views: 62.1ms | ActiveRecord: 3.2ms (13 queries, 5 cached) | GC: 11.5ms)
+
+
+Started GET "/search?category_query=ethics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:47:55 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "ethics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%ethics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 3 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 4 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 4 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 11 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 12 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 13 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  Rendered search/index.html.erb within layouts/application (Duration: 26.9ms | GC: 3.1ms)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | GC: 4.4ms)
+Completed 200 OK in 41ms (Views: 29.9ms | ActiveRecord: 1.4ms (13 queries, 5 cached) | GC: 4.4ms)
+
+
+Started GET "/quotes/15" for 127.0.0.1 at 2025-10-08 03:48:18 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "15"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 15 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 5.2ms | GC: 1.8ms)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 1.8ms)
+Completed 200 OK in 19ms (Views: 7.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.8ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2025-10-08 03:48:20 +0000
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search?category_query=politics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:48:35 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "politics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%politics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  Rendered search/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 4.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search?category_query=metaphysics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:48:42 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "metaphysics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%metaphysics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 5 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 7 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  Rendered search/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/search?category_query=ethics&commit=Search+Quotes" for 127.0.0.1 at 2025-10-08 03:49:54 +0000
+Processing by SearchController#index as HTML
+  Parameters: {"category_query" => "ethics", "commit" => "Search Quotes"}
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "quotes".* FROM "quotes" INNER JOIN "categorizations" ON "categorizations"."quote_id" = "quotes"."id" INNER JOIN "categorizations" "categorizations_quotes_join" ON "categorizations_quotes_join"."quote_id" = "quotes"."id" INNER JOIN "categories" ON "categories"."id" = "categorizations_quotes_join"."category_id" WHERE (categories.cat_name LIKE '%ethics%') /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:10
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 3 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 4 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 4 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 11 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 12 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 13 LIMIT 1 /*action='index',application='Myquote2',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:13
+  Rendered search/index.html.erb within layouts/application (Duration: 34.3ms | GC: 0.0ms)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | GC: 0.0ms)
+Completed 200 OK in 52ms (Views: 36.7ms | ActiveRecord: 2.7ms (13 queries, 5 cached) | GC: 0.0ms)
+
+
