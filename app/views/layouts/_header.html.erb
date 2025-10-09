@@ -18,37 +18,55 @@
         </li>
         <li class="nav-item">
 
-        <%# adding in route to navigation menu to allow user to sign up %>
-        <li><%= link_to 'Sign Up', new_user_path, class:"nav-link" %></li> 
-        </li>
-        <li class="nav-item">
-        <li><a class="nav-link" href="#">Sign In</a></li>
-        </li>
-        <li class="nav-item">
-        <li><a class="nav-link" href="#">Sign Out</a></li>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            User
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">My Account</a></li>
-            <li><a class="dropdown-item" href="#">My Recipes</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Add New Recipe</a></li>
-          </ul>
-        </li>
+        <!-- adding in routes in  navigation menu to allow user to sign up, and showing links based on sessions status -->
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Admin
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Admin Home</a></li>
-            <%# adding in route to nav menu to allow admin to manage users %>
-            <li><%= link_to 'Manage Users', users_path, class:"dropdown-item" %></li>
-          </ul>
-        </li>
+        <!-- Sign Up link: -->
+        <% if !logged_in? %>
+          <li class="nav-item">
+          <li><%= link_to 'Sign Up', new_user_path, class:"nav-link" %></li>
+          </li>
+        <% end %>
+
+        <!-- Sign In link: -->
+        <% if !logged_in? %>
+          <li class="nav-item">
+          <li><%= link_to 'Sign In', login_path, class:"nav-link" %></li>
+          </li>
+        <% end %>
+
+        <!-- Sign Out link: -->
+        <% if logged_in? %>
+          <li class="nav-item">
+          <%= button_to "Sign Out", logout_path, method: :delete, class:"btn btn-link nav-link"
+          %>
+          </li>
+        <% end %>
+
+        <!-- User Drop Menu: -->
+        <% if logged_in? && !is_administrator? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              User
+            </a>
+            <ul class="dropdown-menu">
+              <%= link_to "My Account", userhome_path, class:"dropdown-item" %>
+              <%= link_to "My Quotes", your_quotes_path, class:"dropdown-item" %>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Add New Quotes</a></li>
+            </ul>
+          </li>
+        <% end %>
+
+        <!-- Admin Drop Menu: -->
+        <% if logged_in? && is_administrator? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
+            <ul class="dropdown-menu">
+            <%= link_to "Admin Home", admin_path, class:"dropdown-item" %>
+              <li><%= link_to 'Manage Users', users_path, class:"dropdown-item" %></li>
+            </ul>
+          </li>
+        <% end %>
 
         <!--
         <li class="nav-item">
