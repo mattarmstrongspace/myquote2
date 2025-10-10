@@ -8,3 +8,30 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ /* creating a wrm textured color palette for website */
+
+ body {
+    background-color: #fdf6e3; /* soft parchment tone */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #3b2f2f;
+ }
+/* applying stylingfor the container to looklike a scroll */
+ .container {
+    background-color: #fffef5; /* slightly lighter parchment */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid #e0d6b9;
+ }
+
+ h1,h2,h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:#4a3f35;
+    letter-spacing: 0.5px;
+ }
+
+ p, label, input, textarea {
+    font-family: 'Georgia', serif;
+ }

@@ -1,14 +1,21 @@
-<% content_for :title, "Editing user" %>
-
 <div style="padding-top: 10px;">
+  
+<%# adjusting view depending on if user is standard or admin %>
+<% if logged_in? && is_administrator? %>
   <h3>Update User Details</h3>
+  <% else %>
+  <h3>Update Your Details</h3>
+  <% end %>
 </div>
 
 <%= render "form", user: @user %>
 
-<br>
-
+<%# Only admin can see links %>
+<% if logged_in? && is_administrator? %>
 <div style="padding-top: 10px;">
-  <%= link_to "Show this user", @user %> |
-  <%= link_to "Back to users", users_path %>
+  <div>
+    <%= link_to "Show this user", @user %> |
+    <%= link_to "Back to users", users_path %>
+  </div>
 </div>
+<% end %>

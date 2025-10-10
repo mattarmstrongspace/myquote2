@@ -6,4 +6,7 @@ class Quote < ApplicationRecord
   has_many :categories, through: :categorizations
 
   accepts_nested_attributes_for :author
+
+  validates :categories, presence: true
+  validates :quote, presence: true
 end

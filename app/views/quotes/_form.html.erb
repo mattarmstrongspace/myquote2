@@ -30,11 +30,6 @@
     <%= f.select :author_id, [["(New author)", ""]] + Author.all.collect {|a| [a.is_anon ? "Anonymous" : "#{a.auth_fname} #{a.auth_lname}", a.id]}, {}, class: 'form-control', id: 'author-select' %>
   </div>
 
-  <!-- Toggle Button -->
-<button type="button" id="toggle-new-author" class="btn btn-secondary mb-2">
-  [+] Add New Author
-</button>
-
   <!-- New Author Fields -->
   <div id="new-author-fields" style="display: none;">
     <%= f.fields_for :author do |a| %>
@@ -56,9 +51,6 @@
       </div>
       <div class="form-group author-field">
         <%= a.text_area :bio, placeholder: "Short Bio", class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <a href="#" class="remove-author" style="color: red; text-decoration: none;">[-] Remove New Author</a>
       </div>
     <% end %>
   </div>
@@ -97,32 +89,22 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   // Get author dropdown and form fields for new author
-  const toggleBtn = document.getElementById('toggle-new-author');
-  const newAuthorFields = document.getElementById('new-author-fields');
   const authorSelect = document.getElementById('author-select');
+  const newAuthorFields = document.getElementById('new-author-fields');
 
-        toggleBtn.addEventListener('click', function() {
-          const isVisible = newAuthorFields.style.display === 'block';
-          newAuthorFields.style.display = isVisible ? 'none' : 'block';
-          if (!isVisible) {
-            authorSelect.value = ""; // Clear dropdown only when showing new author
-          }
-        });
+    function toggleNewAuthor() {
+      if (authorSelect.value === "") {
+        newAuthorFields.style.display = "block";
+      }
+      else {
+        newAuthorFields.style.display = 'none';
+      }
+    }
 
+    //run on page load
+    toggleNewAuthor();
 
-          // hide new author form is existing author is selected
-          authorSelect.addEventListener('change', function() {
-            if (authorSelect.value !== ""){
-              newAuthorFields.style.display ='none';
-            }
-          });
-
-        //remove new author form
-        document.addEventListener('click', function(e) {
-          if (e.target && e.target.classList.contains('remove-author')) {
-            e.preventDefault();
-            newAuthorFields.style.display = 'none';
-          }
-        });
-      });
+    //run when dropdown changed
+    authorSelect.addEventListener('change', toggleNewAuthor);
+  });
 </script>

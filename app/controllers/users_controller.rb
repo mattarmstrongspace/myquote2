@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       #retreieve all users from database
       @users = User.all
     #otherwise, send to user landing page
-    elsif logged_in &&!is_administrator?
+    elsif logged_in? &&!is_administrator?
       redirect_to userhome_path
     #otherwise,if no on is logged in, generate unauthorized messgeed, redirect to login page
     else
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         # format.html { redirect_to @user, notice: "User was successfully created." }
-        format.hmtl {redirect_to login_path, notice: "Sign up successful! Please log in."}
+        format.html {redirect_to login_path, notice: "Sign up successful! Please log in."}
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }

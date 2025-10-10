@@ -2,6 +2,8 @@ class QuotesController < ApplicationController
   before_action :set_quote, only: %i[ show edit update destroy ]
   #ensures that app users cannot access any methods other than index and show, unles validated and logged in.
   before_action :require_login, except: [:index, :show]
+  #ensures that only the correct owner of the quote can edit update or destroy their own quotes
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   # GET /quotes or /quotes.json
   def index
@@ -74,5 +76,13 @@ class QuotesController < ApplicationController
       category_ids: [],
       author_attributes: [:auth_fname, :auth_lname, :birth_year, :death_year, :is_anon, :bio]
       )
+    end
+
+  private
+    #method to ensure that only the  quote owner can edit or delete
+    def authorize_user
+      unless @quote.user == current_user
+        redirect_to quotes_path, alert: "You are not authorized to edit this quote"
+      end
     end
 end

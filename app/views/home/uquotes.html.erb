@@ -1,15 +1,34 @@
 <h3>Your Quotes</h3>
 <hr />
 
-<% @quotes.each do |quote| %>
-    <div class="card bg-body-tertiary" style="margin-bottom:10px">
-    <div class="card-body">
-        <h4 class = "card-title">
-            <%= "#{quote.author.auth_fname} #{quote.author.auth_lname}" %></h4>
-        <p class="card-text">
-        <%= quote.quote %><br />
-        <a href="/quotes/<%= quote.id %>">Get more information</a>
-        </p>
-    </div>
-    </div>
-<% end %>
+<%# Row for a responsive grid using cardsfor quotes %>
+<div class="row">
+    <% @quotes.each do |quote| %>
+        <div class="col-md-6 col-lg-4 mb-4 ">
+        
+        <%# Bootstrapcard to display each quote nicely %>
+        <div class="card h-100 bg-body-tertiary">
+            <div class="card-body">
+
+                <%# Display author's name if present, if just first name, full name or anonymous %>
+                <h4 class = "card-title">
+                    <% if quote.author.present? && quote.author.auth_fname.present? %>
+                        <%= quote.author.auth_fname %>
+                        <% if quote.author.auth_lname.present? %>
+                            <%= "#{quote.author.auth_lname}" %>
+                        <% end %>
+                    <% else %>
+                        Anonymous
+                    <% end %>
+                </h4>
+
+                <%# Show quote text and link to more information %>
+                <p class="card-text text-truncate" style="max-height: 10em; overflow: hidden;">
+                    <%= quote.quote %><br />
+                    <a href="/quotes/<%= quote.id %>">Get more information</a>
+                </p>
+            </div>
+        </div>
+        </div>
+    <% end %>
+</div>
