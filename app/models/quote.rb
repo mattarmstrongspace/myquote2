@@ -4,5 +4,6 @@ class Quote < ApplicationRecord
 
   has_many :categorizations, dependent: :destroy
   has_many :categories, through: :categorizations
-  accepts_nested_attributes_for :categorizations, reject_if: :all_blank, allow_destroy: true
+
+  accepts_nested_attributes_for :author
 end

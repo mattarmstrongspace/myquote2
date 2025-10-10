@@ -30,28 +30,35 @@
     <%= f.select :author_id, [["(New author)", ""]] + Author.all.collect {|a| [a.is_anon ? "Anonymous" : "#{a.auth_fname} #{a.auth_lname}", a.id]}, {}, class: 'form-control', id: 'author-select' %>
   </div>
 
-  <!-- Add new author -->
-  <div class="form-group" style="padding-bottom: 10px;">
-    <h5>Add New Author</h5>
-    <%= f.fields_for :new_author do |a| %>
-      <div class="row">
+  <!-- Toggle Button -->
+<button type="button" id="toggle-new-author" class="btn btn-secondary mb-2">
+  [+] Add New Author
+</button>
+
+  <!-- New Author Fields -->
+  <div id="new-author-fields" style="display: none;">
+    <%= f.fields_for :author do |a| %>
+      <div class="row mb-2 author-field">
         <div class="col">
-          <%= a.text_field :auth_fname, placeholder: "First Name", class: 'form-control author-field' %>
+          <%= a.text_field :auth_fname, placeholder: "First Name", class: "form-control" %>
         </div>
         <div class="col">
-          <%= a.text_field :auth_lname, placeholder: "Last Name", class: 'form-control author-field' %>
-        </div>
-      </div>
-      <div class="row mt-2">
-        <div class="col">
-          <%= a.number_field :birth_year, placeholder: "Birth Year", class: 'form-control author-field' %>
-        </div>
-        <div class="col">
-          <%= a.number_field :death_year, placeholder: "Death Year (if applicable)", class: 'form-control author-field' %>
+          <%= a.text_field :auth_lname, placeholder: "Last Name", class: "form-control" %>
         </div>
       </div>
-      <div class="form-group mt-2">
-        <%= a.text_area :bio, placeholder: "Short Bio about author", class: 'form-control author-field' %>
+      <div class="row mb-2 author-field">
+        <div class="col">
+          <%= a.number_field :birth_year, placeholder: "Birth Year", class: "form-control" %>
+        </div>
+        <div class="col">
+          <%= a.number_field :death_year, placeholder: "Death Year", class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group author-field">
+        <%= a.text_area :bio, placeholder: "Short Bio", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <a href="#" class="remove-author" style="color: red; text-decoration: none;">[-] Remove New Author</a>
       </div>
     <% end %>
   </div>
@@ -86,54 +93,36 @@
 <% end %>
 
 <script>
-// Wait for the document to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Attach an event listener to detect clicks on the "Remove this category" link
-  document.addEventListener('click', function(e) {
-    if (e.target && e.target.classList.contains('remove-category')) {
-      // Prevent the default action of the link
-      e.preventDefault();
-
-      // Get all the category fields
-      const categoryFields = document.querySelectorAll('.category-field');
-      // Only remove an category field if there's more than one
-      if (categoryFields.length > 1) {
-        e.target.closest('.category-field').remove();
-      }
-    }
-  });
-});
-</script>
-
-<script>
 // Wait for document to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
 
   // Get author dropdown and form fields for new author
+  const toggleBtn = document.getElementById('toggle-new-author');
+  const newAuthorFields = document.getElementById('new-author-fields');
   const authorSelect = document.getElementById('author-select');
-  const authorFields = document.querySelectorAll('.author-field');
 
-        // function to enable or disable fields
-        function toggleAuthorFields() {
-          // get selected options text, covert to lowecase, check if anon, check if author is selected
-          const selectedText = authorSelect.options[authorSelect.selectedIndex].text.trim().toLowerCase();
-          const isAnonymous = selectedText === "anonymous";
-          const isExistingAuthor = authorSelect.value !== "";
+        toggleBtn.addEventListener('click', function() {
+          const isVisible = newAuthorFields.style.display === 'block';
+          newAuthorFields.style.display = isVisible ? 'none' : 'block';
+          if (!isVisible) {
+            authorSelect.value = ""; // Clear dropdown only when showing new author
+          }
+        });
 
-          // disable fields if author or anon is selected
-          const disable = isAnonymous || isExistingAuthor;
-          authorFields.forEach(field => {
-            field.disabled = disable;
-            if (disable){
-              field.value = "";
-              }
+
+          // hide new author form is existing author is selected
+          authorSelect.addEventListener('change', function() {
+            if (authorSelect.value !== ""){
+              newAuthorFields.style.display ='none';
+            }
           });
-        }
 
-        //run the toggle function on page load
-        toggleAuthorFields();
-
-        //re run toggle when changing dropdown
-        authorSelect.addEventListener('change', toggleAuthorFields);
-});
+        //remove new author form
+        document.addEventListener('click', function(e) {
+          if (e.target && e.target.classList.contains('remove-author')) {
+            e.preventDefault();
+            newAuthorFields.style.display = 'none';
+          }
+        });
+      });
 </script>

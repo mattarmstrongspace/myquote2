@@ -1,4 +1,7 @@
+<%# form is connected to the user mode, referencing its attributes and data %>
 <%= form_with(model: user) do |form| %>
+
+  <%# Error display code that shows any errors with the form submission %>
   <% if user.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,44 +14,58 @@
     </div>
   <% end %>
 
-  <%# using Bootstrap form-control class to assist in formatting the form fields, as well as adding some padding for nice layout %>
-
+  <%# Display user details and make it uneditable to admin %>
   <div class="form-group" style="padding-bottom: 10px;">
-    <!-- <%= form.label :fname, style: "display: block" %> -->
-    <%= form.text_field :fname, placeholder: 'First Name', class: 'form-control' %>
+    <%= form.text_field :fname, placeholder: 'First Name', class: 'form-control', readonly: (logged_in? && is_administrator?) %>
   </div>
 
   <div class="form-group" style="padding-bottom: 10px;">
-    <!-- <%= form.label :lname, style: "display: block" %> -->
-    <%= form.text_field :lname, placeholder: 'Last Name', class: 'form-control' %>
+    <%= form.text_field :lname, placeholder: 'Last Name', class: 'form-control', readonly: (logged_in? && is_administrator?) %>
   </div>
 
   <div class="form-group" style="padding-bottom: 10px;">
-    <!-- <%= form.label :email, style: "display: block" %> -->
-    <%= form.text_field :email, placeholder: 'Email Address', class: 'form-control' %>
+    <%= form.text_field :email, placeholder: 'Email Address', class: 'form-control', readonly: (logged_in? && is_administrator?) %>
   </div>
 
   <div class="form-group" style="padding-bottom: 10px;">
-    <!-- <%= form.label :password_digest, style: "display: block" %> -->
-    <%= form.password_field :password, placeholder: 'Choose a strong password', class: 'form-control' %>
+    <%= form.password_field :password, placeholder: user.password_digest.present? ? 'Password set' : 'Choose a strong password', class: 'form-control', readonly: (logged_in? && is_administrator?) %>
   </div>
 
-  <div>
-  <!--
-    <%= form.label :is_admin, style: "display: block" %>
-    <%= form.check_box :is_admin %> -->
+  <%# Ensure only admin can see/use admin role checkbox %>
+  <div class="form-group" style="padding-bottom: 10px;">
+  <% if logged_in? && is_administrator? %>
+    <%= form.label :is_admin do %>
+      Admin Role
+    <%= form.check_box :is_admin %>
+  <% end %>
+  <% else %>
+    <%# If standard user, hide the admin field %>
     <%= form.hidden_field :is_admin, value: false %>
+  <% end %>
   </div>
 
-  <div>
-  <!--
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %> -->
+  <%# Ensure only admin can see status field %>
+  <div class="form-group" style="padding-bottom: 10px;">
+
+  <% if logged_in? && is_administrator? %>
+    <%# Dropdown status field, presetting to user's current status %>
+    <%= form.select :status, ['Active', 'Suspended', 'Banned'], {}, class: 'form-control' %>
+
+  <%# hide status field if not admin %>
+  <% elsif logged_in? && !is_administrator? %>
+    <%= form.hidden_field :status %>
+  <% else %>
     <%= form.hidden_field :status, value: "Active" %>
+  <% end %>
   </div>
 
   <div>
-    <!-- <%= form.submit %> -->
+  <%# if user is logged in, form's role is edit, change button to update %>
+  <% if logged_in? %>
+	  <%= form.submit 'Update', class: 'btn btn-primary' %>
+  <% else %>
+  <%# set button to submit if form is being used to sign up%>
     <%= form.submit 'Submit', class: 'btn btn-primary' %>
+  <% end %>
   </div>
 <% end %>
