@@ -13,6 +13,7 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   def new
     @quote = Quote.new
+    3.times { @quote.categorizations.build} #give the form 3 category fields
   end
 
   # GET /quotes/1/edit
@@ -23,9 +24,15 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(quote_params)
 
+    #if no author is selected,but new author fields have data
+    if @quote.author_id.blank? && (new_author_params[:auth_fname].present? ||new_author_params[:auth_lname].present?)
+      new_author = Author.create(new_author_params)
+      @quote.author_id = new_author.id
+    end
+
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to @quote, notice: "Quote was successfully created." }
+        format.html { redirect_to quote_url(@quote), notice: "Quote was successfully created." }
         format.json { render :show, status: :created, location: @quote }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -60,11 +67,15 @@ class QuotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quote
-      @quote = Quote.find(params.expect(:id))
+      @quote = Quote.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def quote_params
-      params.expect(quote: [ :quote, :year, :is_public, :comment, :user_id, :author_id ])
+      params.require(:quote).permit(:quote, :year, :is_public, :comment, :user_id, :author_id, category_ids: [])
+    end
+
+    def new_author_params
+      params.require(:new_author).permit(:auth_fname, :auth_lname, :birth_year, :death_year, :is_anon, :bio)
     end
 end
