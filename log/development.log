@@ -11416,3 +11416,949 @@ Processing by QuotesController#show as TURBO_STREAM
 Completed 200 OK in 24ms (Views: 11.8ms | ActiveRecord: 0.4ms (6 queries, 4 cached) | GC: 1.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-10-10 16:35:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Myquote2'*/[0m
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (1.1ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 10 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 4, 5, 6, 7, 8, 9, 10, 11) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.2ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 3, 4, 5, 6, 7, 8, 9, 10, 11) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4, 7) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 41.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 96.3ms | GC: 0.0ms)
+Completed 200 OK in 459ms (Views: 115.6ms | ActiveRecord: 5.8ms (9 queries, 4 cached) | GC: 0.5ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-10-10 16:35:26 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for 127.0.0.1 at 2025-10-10 16:35:27 +0000
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 33.2ms | GC: 0.6ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='new',application='Myquote2',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 41.4ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 87.2ms | GC: 1.1ms)
+Completed 200 OK in 183ms (Views: 87.9ms | ActiveRecord: 0.3ms (5 queries, 4 cached) | GC: 9.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2025-10-10 16:35:28 +0000
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='new',application='Myquote2',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 15.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 26.5ms | ActiveRecord: 0.3ms (5 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2025-10-10 16:35:29 +0000
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='new',application='Myquote2',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 7.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 10.3ms | ActiveRecord: 0.2ms (5 queries, 4 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2025-10-10 16:35:37 +0000
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'bob@builder.com' LIMIT 1 /*action='create',application='Myquote2',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:12:in 'SessionsController#create'
+Redirected to http://localhost:3000/userhome
+Completed 302 Found in 298ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2025-10-10 16:35:37 +0000
+Processing by HomeController#uindex as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/uindex.html.erb within layouts/application
+  Rendered home/uindex.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='uindex',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 9.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 13.1ms | ActiveRecord: 0.2ms (5 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2025-10-10 16:35:42 +0000
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/new.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:30:in 'Enumerable#collect'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:74
+  Rendered quotes/_form.html.erb (Duration: 50.2ms | GC: 1.1ms)
+  Rendered quotes/new.html.erb within layouts/application (Duration: 56.5ms | GC: 1.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 8.8ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 68.0ms | GC: 1.7ms)
+Completed 200 OK in 98ms (Views: 68.4ms | ActiveRecord: 0.7ms (9 queries, 6 cached) | GC: 1.7ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2025-10-10 16:35:46 +0000
+Processing by HomeController#uindex as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/uindex.html.erb within layouts/application
+  Rendered home/uindex.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='uindex',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 6.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 0.2ms (5 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/your-quotes" for 127.0.0.1 at 2025-10-10 16:35:47 +0000
+Processing by HomeController#uquotes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/uquotes.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/views/home/uquotes.html.erb:4
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (15, 16) /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/views/home/uquotes.html.erb:4
+  Rendered home/uquotes.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 11.3ms | ActiveRecord: 0.6ms (7 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/26" for 127.0.0.1 at 2025-10-10 16:35:51 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "26"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 26 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:74:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 15.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 12.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | GC: 0.0ms)
+Completed 200 OK in 51ms (Views: 31.9ms | ActiveRecord: 0.4ms (6 queries, 4 cached) | GC: 0.0ms)
+
+
+Started DELETE "/quotes/26" for 127.0.0.1 at 2025-10-10 16:35:57 +0000
+Processing by QuotesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "id" => "26"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 26 LIMIT 1 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:74:in 'QuotesController#set_quote'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mCategorization Load (1.7ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" = 26 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mCategorization Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categorizations" WHERE "categorizations"."id" = 35 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mCategorization Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categorizations" WHERE "categorizations"."id" = 36 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mQuote Destroy (0.1ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = 26 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+Redirected to http://localhost:3000/quotes
+Completed 303 See Other in 36ms (ActiveRecord: 13.3ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2025-10-10 16:35:57 +0000
+Processing by QuotesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.1ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /*action='index',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/index.html.erb:8
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/index.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 10.0ms | ActiveRecord: 0.4ms (7 queries, 5 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/27" for 127.0.0.1 at 2025-10-10 16:36:00 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "27"}
+  [1m[36mQuote Load (0.5ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 27 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:74:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 13.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 17.3ms | ActiveRecord: 0.4ms (6 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2025-10-10 16:36:03 +0000
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/new.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:30:in 'Enumerable#collect'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:74
+  Rendered quotes/_form.html.erb (Duration: 9.6ms | GC: 1.6ms)
+  Rendered quotes/new.html.erb within layouts/application (Duration: 10.1ms | GC: 1.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | GC: 1.6ms)
+Completed 200 OK in 33ms (Views: 17.6ms | ActiveRecord: 0.6ms (9 queries, 6 cached) | GC: 1.6ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2025-10-10 16:36:04 +0000
+Processing by HomeController#uindex as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/uindex.html.erb within layouts/application
+  Rendered home/uindex.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='uindex',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 9.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | GC: 1.1ms)
+Completed 200 OK in 26ms (Views: 13.3ms | ActiveRecord: 0.3ms (5 queries, 4 cached) | GC: 1.1ms)
+
+
+Started GET "/your-quotes" for 127.0.0.1 at 2025-10-10 16:36:06 +0000
+Processing by HomeController#uquotes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/uquotes.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/views/home/uquotes.html.erb:4
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 16 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/views/home/uquotes.html.erb:4
+  Rendered home/uquotes.html.erb within layouts/application (Duration: 6.5ms | GC: 1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | GC: 1.6ms)
+Completed 200 OK in 28ms (Views: 14.0ms | ActiveRecord: 0.5ms (7 queries, 4 cached) | GC: 1.6ms)
+
+
+Started GET "/quotes/27" for 127.0.0.1 at 2025-10-10 16:36:08 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "27"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 27 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:74:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 4.5ms | GC: 2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 12.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | GC: 2.2ms)
+Completed 200 OK in 36ms (Views: 18.9ms | ActiveRecord: 0.4ms (6 queries, 4 cached) | GC: 2.2ms)
+
+
+Started DELETE "/quotes/27" for 127.0.0.1 at 2025-10-10 16:36:10 +0000
+Processing by QuotesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "id" => "27"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 27 LIMIT 1 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:74:in 'QuotesController#set_quote'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mCategorization Load (3.5ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" = 27 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mCategorization Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categorizations" WHERE "categorizations"."id" = 37 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mCategorization Destroy (0.0ms)[0m  [1m[31mDELETE FROM "categorizations" WHERE "categorizations"."id" = 38 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mQuote Destroy (0.1ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = 27 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+Redirected to http://localhost:3000/quotes
+Completed 303 See Other in 27ms (ActiveRecord: 4.2ms (6 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2025-10-10 16:36:10 +0000
+Processing by QuotesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.1ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /*action='index',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/index.html.erb:8
+  Rendered quotes/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.4ms)
+Completed 200 OK in 26ms (Views: 9.9ms | ActiveRecord: 0.4ms (7 queries, 5 cached) | GC: 0.4ms)
+
+
+  [1m[36mQuote Load (0.1ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /* loading for pp */ LIMIT 11 /*application='Myquote2'*/[0m
+Started GET "/quotes/new" for 127.0.0.1 at 2025-10-10 16:37:06 +0000
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/new.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:30:in 'Enumerable#collect'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:74
+  Rendered quotes/_form.html.erb (Duration: 6.2ms | GC: 0.0ms)
+  Rendered quotes/new.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | GC: 0.6ms)
+Completed 200 OK in 28ms (Views: 13.2ms | ActiveRecord: 0.5ms (9 queries, 6 cached) | GC: 1.1ms)
+
+
+Started POST "/quotes" for 127.0.0.1 at 2025-10-10 16:38:35 +0000
+Processing by QuotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "quote" => {"user_id" => "4", "quote" => "The unexamined life is not worth living", "year" => "-399", "author_id" => "3", "comment" => "", "is_public" => "1", "category_ids" => ["8"]}, "new_author" => {"auth_fname" => "", "auth_lname" => "", "birth_year" => "", "death_year" => "", "bio" => ""}, "commit" => "Create Quote"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 8 /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:29:in 'QuotesController#create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/quotes_controller.rb:38:in 'block in QuotesController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:38:in 'block in QuotesController#create'
+  [1m[36mQuote Create (1.9ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('The unexamined life is not worth living', -399, 1, '', 4, 3, '2025-10-10 16:38:35.478168', '2025-10-10 16:38:35.478168') RETURNING "id" /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:38:in 'block in QuotesController#create'
+  [1m[36mCategorization Create (0.1ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (28, 8, '2025-10-10 16:38:35.482751', '2025-10-10 16:38:35.482751') RETURNING "id" /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:38:in 'block in QuotesController#create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:38:in 'block in QuotesController#create'
+Redirected to http://localhost:3000/quotes/28
+Completed 302 Found in 31ms (ActiveRecord: 2.5ms (5 queries, 1 cached) | GC: 1.8ms)
+
+
+Started GET "/quotes/28" for 127.0.0.1 at 2025-10-10 16:38:35 +0000
+Processing by QuotesController#show as TURBO_STREAM
+  Parameters: {"id" => "28"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 28 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:74:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 7.3ms | ActiveRecord: 0.3ms (6 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/userhome" for 127.0.0.1 at 2025-10-10 16:38:41 +0000
+Processing by HomeController#uindex as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/uindex.html.erb within layouts/application
+  Rendered home/uindex.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='uindex',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 6.3ms | ActiveRecord: 0.2ms (5 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/your-quotes" for 127.0.0.1 at 2025-10-10 16:38:42 +0000
+Processing by HomeController#uquotes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/uquotes.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/views/home/uquotes.html.erb:4
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 3 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/views/home/uquotes.html.erb:4
+  Rendered home/uquotes.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.4ms (7 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2025-10-10 16:38:42 +0000
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/new.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:30:in 'Enumerable#collect'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:74
+  Rendered quotes/_form.html.erb (Duration: 8.7ms | GC: 0.0ms)
+  Rendered quotes/new.html.erb within layouts/application (Duration: 9.3ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 11.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 22.7ms | ActiveRecord: 0.6ms (9 queries, 6 cached) | GC: 0.0ms)
+
+
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /* loading for pp */ LIMIT 11 /*application='Myquote2'*/[0m
+  [1m[36mCategorization Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categorizations" WHERE "categorizations"."quote_id" = 28 /*application='Myquote2'*/[0m
+Started GET "/your-quotes" for 127.0.0.1 at 2025-10-10 16:41:10 +0000
+Processing by HomeController#uquotes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/uquotes.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/views/home/uquotes.html.erb:4
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 3 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/views/home/uquotes.html.erb:4
+  Rendered home/uquotes.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 23.3ms | GC: 18.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | GC: 18.0ms)
+Completed 200 OK in 40ms (Views: 27.6ms | ActiveRecord: 0.4ms (7 queries, 4 cached) | GC: 18.0ms)
+
+
+Started GET "/quotes/28" for 127.0.0.1 at 2025-10-10 16:41:12 +0000
+Processing by QuotesController#show as HTML
+  Parameters: {"id" => "28"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 28 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:74:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 7.2ms | GC: 2.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 2.2ms)
+Completed 200 OK in 23ms (Views: 10.1ms | ActiveRecord: 0.4ms (6 queries, 4 cached) | GC: 2.2ms)
+
+
+Started DELETE "/quotes/28" for 127.0.0.1 at 2025-10-10 16:41:15 +0000
+Processing by QuotesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "id" => "28"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 28 LIMIT 1 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:74:in 'QuotesController#set_quote'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mCategorization Load (2.4ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" = 28 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mCategorization Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categorizations" WHERE "categorizations"."id" = 39 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mQuote Destroy (0.1ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = 28 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+Redirected to http://localhost:3000/quotes
+Completed 303 See Other in 20ms (ActiveRecord: 3.0ms (5 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2025-10-10 16:41:15 +0000
+Processing by QuotesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.1ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /*action='index',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/index.html.erb:8
+  Rendered quotes/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.8ms)
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 0.3ms (7 queries, 5 cached) | GC: 0.8ms)
+
+
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 28 /* loading for pp */ LIMIT 11 /*application='Myquote2'*/[0m
+Started GET "/quotes/new" for 127.0.0.1 at 2025-10-10 16:44:00 +0000
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/new.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:30:in 'Enumerable#collect'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:74
+  Rendered quotes/_form.html.erb (Duration: 17.9ms | GC: 0.3ms)
+  Rendered quotes/new.html.erb within layouts/application (Duration: 18.9ms | GC: 0.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | GC: 0.3ms)
+Completed 200 OK in 62ms (Views: 27.4ms | ActiveRecord: 2.4ms (9 queries, 6 cached) | GC: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-10 16:48:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Myquote2'*/[0m
+Processing by HomeController#index as HTML
+  [1m[36mQuote Load (2.0ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" LIMIT 10 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mAuthor Load (1.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" IN (2, 4, 5, 6, 7, 8, 9, 10, 11) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategorization Load (0.2ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" IN (1, 3, 4, 5, 6, 7, 8, 9, 10, 11) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (2, 1, 6, 3, 4, 7) /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/home_controller.rb:3:in 'HomeController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 27.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 52.0ms | GC: 0.0ms)
+Completed 200 OK in 165ms (Views: 56.7ms | ActiveRecord: 7.5ms (9 queries, 4 cached) | GC: 1.3ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2025-10-10 16:48:26 +0000
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/new.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:30:in 'Enumerable#collect'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:74
+  Rendered quotes/_form.html.erb (Duration: 14.4ms | GC: 0.0ms)
+  Rendered quotes/new.html.erb within layouts/application (Duration: 15.6ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 24.3ms | ActiveRecord: 0.6ms (9 queries, 6 cached) | GC: 0.0ms)
+
+
+Started POST "/quotes" for 127.0.0.1 at 2025-10-10 16:48:52 +0000
+Processing by QuotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "quote" => {"user_id" => "4", "quote" => "", "year" => "", "author_id" => "1", "new_author" => {"auth_fname" => "", "auth_lname" => "", "birth_year" => "", "death_year" => "", "bio" => ""}, "comment" => "", "is_public" => "1", "category_ids" => ["1"]}, "commit" => "Create Quote"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+[31mUnpermitted parameter: :new_author. Context: { controller: QuotesController, action: create, request: #<ActionDispatch::Request:0x000070774dcd25a0>, params: {"authenticity_token" => "[FILTERED]", "quote" => {"user_id" => "4", "quote" => "", "year" => "", "author_id" => "1", "new_author" => {"auth_fname" => "", "auth_lname" => "", "birth_year" => "", "death_year" => "", "bio" => ""}, "comment" => "", "is_public" => "1", "category_ids" => ["1"]}, "commit" => "Create Quote", "controller" => "quotes", "action" => "create"} }[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:29:in 'QuotesController#create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/quotes_controller.rb:38:in 'block in QuotesController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:38:in 'block in QuotesController#create'
+  [1m[36mQuote Create (2.4ms)[0m  [1m[32mINSERT INTO "quotes" ("quote", "year", "is_public", "comment", "user_id", "author_id", "created_at", "updated_at") VALUES ('', NULL, 1, '', 4, 1, '2025-10-10 16:48:52.798886', '2025-10-10 16:48:52.798886') RETURNING "id" /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:38:in 'block in QuotesController#create'
+  [1m[36mCategorization Create (0.2ms)[0m  [1m[32mINSERT INTO "categorizations" ("quote_id", "category_id", "created_at", "updated_at") VALUES (29, 1, '2025-10-10 16:48:52.804636', '2025-10-10 16:48:52.804636') RETURNING "id" /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:38:in 'block in QuotesController#create'
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:38:in 'block in QuotesController#create'
+Redirected to http://localhost:3000/quotes/29
+Completed 302 Found in 39ms (ActiveRecord: 11.0ms (5 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes/29" for 127.0.0.1 at 2025-10-10 16:48:52 +0000
+Processing by QuotesController#show as TURBO_STREAM
+  Parameters: {"id" => "29"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 29 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:74:in 'QuotesController#set_quote'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/show.html.erb within layouts/application
+  Rendered quotes/_quote.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered quotes/show.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='show',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 9.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 16.3ms | ActiveRecord: 0.4ms (6 queries, 4 cached) | GC: 0.0ms)
+
+
+Started DELETE "/quotes/29" for 127.0.0.1 at 2025-10-10 16:49:04 +0000
+Processing by QuotesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "id" => "29"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."id" = 29 LIMIT 1 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:74:in 'QuotesController#set_quote'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mCategorization Load (2.0ms)[0m  [1m[34mSELECT "categorizations".* FROM "categorizations" WHERE "categorizations"."quote_id" = 29 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mCategorization Destroy (0.1ms)[0m  [1m[31mDELETE FROM "categorizations" WHERE "categorizations"."id" = 40 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mQuote Destroy (0.1ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = 29 /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/quotes_controller.rb:63:in 'QuotesController#destroy'
+Redirected to http://localhost:3000/quotes
+Completed 303 See Other in 24ms (ActiveRecord: 2.8ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2025-10-10 16:49:04 +0000
+Processing by QuotesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/index.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /*action='index',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/index.html.erb:8
+  Rendered quotes/index.html.erb within layouts/application (Duration: 5.3ms | GC: 1.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 16.3ms | GC: 11.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | GC: 13.8ms)
+Completed 200 OK in 41ms (Views: 24.0ms | ActiveRecord: 0.4ms (7 queries, 5 cached) | GC: 13.8ms)
+
+
+Started GET "/your-quotes" for 127.0.0.1 at 2025-10-10 16:49:08 +0000
+Processing by HomeController#uquotes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/uquotes.html.erb within layouts/application
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes" WHERE "quotes"."user_id" = 4 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/views/home/uquotes.html.erb:4
+  Rendered home/uquotes.html.erb within layouts/application (Duration: 8.5ms | GC: 5.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='uquotes',application='Myquote2',controller='home'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 31.8ms | GC: 22.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | GC: 29.4ms)
+Completed 200 OK in 65ms (Views: 45.9ms | ActiveRecord: 0.4ms (6 queries, 4 cached) | GC: 36.4ms)
+
+
+Started GET "/quotes/new" for 127.0.0.1 at 2025-10-10 16:49:09 +0000
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/new.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:30:in 'Enumerable#collect'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:74
+  Rendered quotes/_form.html.erb (Duration: 10.0ms | GC: 1.3ms)
+  Rendered quotes/new.html.erb within layouts/application (Duration: 10.5ms | GC: 1.3ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 6.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | GC: 2.4ms)
+Completed 200 OK in 34ms (Views: 19.4ms | ActiveRecord: 0.6ms (9 queries, 6 cached) | GC: 2.4ms)
+
+
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."author_id" = 14 /* loading for pp */ LIMIT 11 /*application='Myquote2'*/[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."auth_fname" = 'Charles' /* loading for pp */ LIMIT 11 /*application='Myquote2'*/[0m
+  [1m[36mAuthor Delete All (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = NULL /*application='Myquote2'*/[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 16 LIMIT 1 /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mQuote Update All (0.6ms)[0m  [1m[33mUPDATE "quotes" SET "author_id" = NULL WHERE "quotes"."author_id" = 16 /*application='Myquote2'*/[0m
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = 16 /*application='Myquote2'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Myquote2'*/[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 16 LIMIT 1 /*application='Myquote2'*/[0m
+Started GET "/quotes/new" for 127.0.0.1 at 2025-10-10 16:54:02 +0000
+Processing by QuotesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering quotes/new.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:30:in 'Enumerable#collect'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='new',application='Myquote2',controller='quotes'*/[0m
+  ↳ app/views/quotes/_form.html.erb:74
+  Rendered quotes/_form.html.erb (Duration: 8.1ms | GC: 0.8ms)
+  Rendered quotes/new.html.erb within layouts/application (Duration: 8.5ms | GC: 0.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in 'ApplicationController#current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | GC: 0.8ms)
+Completed 200 OK in 30ms (Views: 14.7ms | ActiveRecord: 0.6ms (9 queries, 6 cached) | GC: 1.7ms)
+
+

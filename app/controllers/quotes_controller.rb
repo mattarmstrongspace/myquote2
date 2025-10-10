@@ -1,9 +1,13 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: %i[ show edit update destroy ]
+  #ensures that app users cannot access any methods other than index and show, unles validated and logged in.
+  before_action :require_login, except: [:index, :show]
 
   # GET /quotes or /quotes.json
   def index
-    @quotes = Quote.all
+   #  @quotes = Quote.all
+   # ensuring the user can only see and edit their own quotes
+   @quotes = current_user.quotes
   end
 
   # GET /quotes/1 or /quotes/1.json

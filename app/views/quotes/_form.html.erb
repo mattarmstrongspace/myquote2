@@ -33,7 +33,7 @@
   <!-- Add new author -->
   <div class="form-group" style="padding-bottom: 10px;">
     <h5>Add New Author</h5>
-    <%= fields_for :new_author do |a| %>
+    <%= f.fields_for :new_author do |a| %>
       <div class="row">
         <div class="col">
           <%= a.text_field :auth_fname, placeholder: "First Name", class: 'form-control author-field' %>
