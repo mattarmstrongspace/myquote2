@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @quotes = Quote.includes(:author, :categories).order(created_at: :desc).limit(10)
+    @quotes = Quote.includes(:author, :categories).where(is_public: true).order(created_at: :desc).limit(10)
   end
 
   def uquotes

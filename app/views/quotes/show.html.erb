@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @quote %>
+<%= render @quote %> 
 
 <div>
-  <%= link_to "Edit this quote", edit_quote_path(@quote) %> |
-  <%= link_to "Back to quotes", your_quotes_path %>
+  <% if current_user && @quote.user == current_user %> 
+    <%= link_to "Edit this quote", edit_quote_path(@quote), class: "btn btn-primary" %> 
+    <%= link_to "Delete quote", quote_path(@quote), method: :delete, class:"btn btn-danger" %> 
+  <% end %> 
 
-  <%= button_to "Destroy this quote", @quote, method: :delete %>
-</div>
+<%= link_to "Back to quotes", your_quotes_path %> </div>

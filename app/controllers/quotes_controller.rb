@@ -18,12 +18,13 @@ class QuotesController < ApplicationController
 
   # GET /quotes/new
   def new
-    @quote = Quote.new
+    @quote = Quote.new  
     @quote.build_author
   end
 
   # GET /quotes/1/edit
   def edit
+    @quote = Quote.find(params[:id])
   end
 
   # POST /quotes or /quotes.json
@@ -59,7 +60,7 @@ class QuotesController < ApplicationController
     @quote.destroy!
 
     respond_to do |format|
-      format.html { redirect_to quotes_path, notice: "Quote was successfully destroyed.", status: :see_other }
+      format.html { redirect_to your_quotes_path, notice: "Quote was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
   end
@@ -72,17 +73,20 @@ class QuotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quote_params
-      params.require(:quote).permit(:quote, :year, :is_public, :comment, :user_id, :author_id, 
-      category_ids: [],
-      author_attributes: [:auth_fname, :auth_lname, :birth_year, :death_year, :is_anon, :bio]
-      )
+      permitted = [:quote, :year, :is_public, :comment, :user_id, :author_id, category_ids: []]
+
+      if params[:quote][:author_id].blank?
+        permitted << { author_attributes: [:id, :auth_fname, :auth_lname, :birth_year, :death_year, :is_anon, :bio] }
+      end
+
+      params.require(:quote).permit(*permitted)
     end
+  end
 
   private
     #method to ensure that only the  quote owner can edit or delete
     def authorize_user
       unless @quote.user == current_user
-        redirect_to quotes_path, alert: "You are not authorized to edit this quote"
+        redirect_to your_quotes_path, alert: "You are not authorized to edit this quote"
       end
     end
-end

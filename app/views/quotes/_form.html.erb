@@ -10,7 +10,7 @@
 <% end %>
 
 <!-- Initiating rendering of a form for the @quote object in QuotesController. Configure form to submit to quotes_path using POST, and using local:true to send data as areg HTTP request. Form is formatted using Bootstrap styling for uniformity and UI design -->
-<%= form_with(model: @quote, url: quotes_path, method: :post, local: true) do |f| %>
+<%= form_with(model: @quote, local: true) do |f| %>
   <!-- Hidden field for user_id, being extracted from session object. -->
   <%= f.hidden_field :user_id, value: current_user.id %>
 
@@ -32,7 +32,8 @@
 
   <!-- New Author Fields -->
   <div id="new-author-fields" style="display: none;">
-    <%= f.fields_for :author do |a| %>
+    <%= f.fields_for :author, @quote.author do |a| %>
+      <%= a.hidden_field :id %>
       <div class="row mb-2 author-field">
         <div class="col">
           <%= a.text_field :auth_fname, placeholder: "First Name", class: "form-control" %>
@@ -86,7 +87,7 @@
 
 <script>
 // Wait for document to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbo:load', function() {
 
   // Get author dropdown and form fields for new author
   const authorSelect = document.getElementById('author-select');
