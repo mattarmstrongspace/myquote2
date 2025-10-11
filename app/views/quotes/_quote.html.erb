@@ -28,7 +28,9 @@
   <% if quote.author.present? %>
     <p><strong>Author:</strong> <%= quote.author.auth_fname %> <%= quote.author.auth_lname %></p>
     <p><strong>Born:</strong> <%= quote.author.birth_year.presence || "Unknown" %> | <strong>Died:</strong> <%= quote.author.death_year.presence || "Unknown" %> </p>
-    <p><strong>Bio:</strong> <%= quote.author.bio %></p>
+    <% if quote.author.bio.present? %>
+      <p><strong>Bio:</strong> <%= quote.author.bio %></p>
+    <% end %>
   <% else %>
     <p><strong>Author:</strong> Anonymous </p>
   <% end %>
