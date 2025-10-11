@@ -1,33 +1,31 @@
 class QuotesController < ApplicationController
-  before_action :set_quote, only: %i[ show edit update destroy ]
-  #ensures that app users cannot access any methods other than index and show, unles validated and logged in.
+  before_action :set_quote, only: %i[show edit update destroy]
+  # Ensures that app users cannot access any methods other than index and show unless validated and logged in.
   before_action :require_login, except: [:index, :show]
-  #ensures that only the correct owner of the quote can edit update or destroy their own quotes
+  # Ensures that only the correct owner of the quote can edit, update, or destroy their own quotes.
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
-  # GET /quotes or /quotes.json
+  # GET /quotes
   def index
-   #  @quotes = Quote.all
-   # ensuring the user can only see and edit their own quotes
-   @quotes = current_user.quotes
+    # Ensuring the user can only see and edit their own quotes
+    @quotes = current_user.quotes
   end
 
-  # GET /quotes/1 or /quotes/1.json
+  # GET /quotes/1
   def show
   end
 
   # GET /quotes/new
   def new
-    @quote = Quote.new  
+    @quote = Quote.new
     @quote.build_author
   end
 
   # GET /quotes/1/edit
   def edit
-    @quote = Quote.find(params[:id])
   end
 
-  # POST /quotes or /quotes.json
+  # POST /quotes
   def create
     @quote = Quote.new(quote_params)
 
@@ -42,7 +40,7 @@ class QuotesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /quotes/1 or /quotes/1.json
+  # PATCH/PUT /quotes/1
   def update
     respond_to do |format|
       if @quote.update(quote_params)
@@ -55,7 +53,7 @@ class QuotesController < ApplicationController
     end
   end
 
-  # DELETE /quotes/1 or /quotes/1.json
+  # DELETE /quotes/1
   def destroy
     @quote.destroy!
 
@@ -66,27 +64,27 @@ class QuotesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_quote
-      @quote = Quote.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def quote_params
-      permitted = [:quote, :year, :is_public, :comment, :user_id, :author_id, category_ids: []]
-
-      if params[:quote][:author_id].blank?
-        permitted << { author_attributes: [:id, :auth_fname, :auth_lname, :birth_year, :death_year, :is_anon, :bio] }
-      end
-
-      params.require(:quote).permit(*permitted)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_quote
+    @quote = Quote.find(params[:id])
   end
 
-  private
-    #method to ensure that only the  quote owner can edit or delete
-    def authorize_user
-      unless @quote.user == current_user
-        redirect_to your_quotes_path, alert: "You are not authorized to edit this quote"
-      end
+  # Only allow a list of trusted parameters through.
+  def quote_params
+    permitted = [:quote, :year, :is_public, :comment, :user_id, :author_id, category_ids: []]
+
+    if params[:quote][:author_id].blank?
+      permitted << { author_attributes: [:id, :auth_fname, :auth_lname, :birth_year, :death_year, :is_anon, :bio] }
     end
+
+    params.require(:quote).permit(*permitted)
+  end
+
+  # Method to ensure that only the quote owner can edit or delete
+  def authorize_user
+    unless @quote.user == current_user
+      redirect_to your_quotes_path, alert: "You are not authorized to edit this quote"
+    end
+  end
+end
