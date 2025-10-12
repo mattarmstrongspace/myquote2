@@ -1,16 +1,16 @@
 <h3>Your Quotes</h3>
 <hr />
 
-<%# Row for a responsive grid using cardsfor quotes %>
+<!-- Row for a responsive grid using cardsfor quotes -->
 <div class="row">
     <% @quotes.each do |quote| %>
         <div class="col-md-6 col-lg-4 mb-4 ">
         
-        <%# Bootstrapcard to display each quote nicely %>
+        <!-- Bootstrapcard to display each quote nicely -->
         <div class="card h-100 bg-body-tertiary">
             <div class="card-body">
 
-                <%# Display author's name if present, if just first name, full name or anonymous %>
+                <!-- Display author's name if present, if just first name, full name or anonymous -->
                 <h4 class = "card-title">
                     <% if quote.author.present? && quote.author.auth_fname.present? %>
                         <%= quote.author.auth_fname %>
@@ -22,7 +22,7 @@
                     <% end %>
                 </h4>
 
-                <%# Show quote text and link to more information %>
+                <!-- Show quote text and link to more information -->
                 <p class="card-text text-truncate" style="max-height: 10em; overflow: hidden;">
                     <%= quote.quote %><br />
                     <a href="/quotes/<%= quote.id %>">Get more information</a>

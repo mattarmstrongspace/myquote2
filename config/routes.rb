@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   # get "search/index"
-  resources :categorizations
-  resources :categories
+
+  #commenting out the below resources to users dont access pages via typing in address bar
+  #resources :categorizations
+  #resources :categories
+  #resources :authors
   resources :quotes
-  resources :authors
   resources :users
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

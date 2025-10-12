@@ -16,6 +16,7 @@ class QuotesController < ApplicationController
   end
 
   # GET /quotes/new
+  # set a blank quote object and build an empty author for nested form
   def new
     @quote = Quote.new
     @quote.build_author
@@ -26,6 +27,7 @@ class QuotesController < ApplicationController
   end
 
   # POST /quotes
+  # save new quote to database  using submitted form data
   def create
     @quote = Quote.new(quote_params)
 
@@ -41,6 +43,7 @@ class QuotesController < ApplicationController
   end
 
   # PATCH/PUT /quotes/1
+  #allows editing of existing quote using submitted form data
   def update
     respond_to do |format|
       if @quote.update(quote_params)
@@ -54,6 +57,7 @@ class QuotesController < ApplicationController
   end
 
   # DELETE /quotes/1
+  # delete the quote from the database with success message
   def destroy
     @quote.destroy!
 
@@ -65,12 +69,12 @@ class QuotesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
+  # finds quote by id and assigns it to variable
   def set_quote
     @quote = Quote.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
+  # defining which fields are allowed in the form, as well including nested author form if new author is needed to be created
   def quote_params
     permitted = [:quote, :year, :is_public, :comment, :user_id, :author_id, category_ids: []]
 

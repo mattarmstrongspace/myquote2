@@ -1,8 +1,13 @@
 class SearchController < ApplicationController
+
+  # Search quotes by selected category IDs
   def index
-    category_query = params[:category_query]
-      if category_query.present?
-        @quotematch = Quote.joins(:categorizations, :categories).where("categories.cat_name LIKE ?","%#{category_query}%").distinct
-      end
+    if params[:category_ids].present?
+
+      # Find quotes tagged with any of the selected categories
+      @quotematch = Quote.joins(:categories).where(categories: { id: params[:category_ids] }).distinct
+    else
+      @quotematch = []
+    end
   end
 end

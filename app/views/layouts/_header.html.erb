@@ -1,11 +1,12 @@
 <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
   <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="#">Home</a> -->
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- Left Aligned Links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
         <%= link_to "Home", root_path, class:"nav-link" %>
@@ -17,9 +18,11 @@
         <%= link_to "About", about_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
+      </ul>
 
-        <!-- adding in routes in  navigation menu to allow user to sign up, and showing links based on sessions status -->
-
+      <!-- adding in routes in  navigation menu to allow user to sign up, and showing links based on sessions status -->
+      <!-- Right aligned links -->
+      <ul class="navbar-nav ms-auto mb2 mb-lg-0">
         <!-- Sign Up link: -->
         <% if !logged_in? %>
           <li class="nav-item">
@@ -37,8 +40,7 @@
         <!-- Sign Out link: -->
         <% if logged_in? %>
           <li class="nav-item">
-          <%= button_to "Sign Out", logout_path, method: :delete, class:"btn btn-link nav-link"
-          %>
+          <%= button_to "Sign Out", logout_path, method: :delete, class:"btn btn-link nav-link" %>
           </li>
         <% end %>
 
@@ -63,23 +65,11 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
             <ul class="dropdown-menu">
             <%= link_to "Admin Home", admin_path, class:"dropdown-item" %>
-              <li><%= link_to 'Manage Users', users_path, class:"dropdown-item" %></li>
+            <%= link_to 'Manage Users', users_path, class:"dropdown-item" %>
             </ul>
           </li>
         <% end %>
-
-        <!--
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-        -->
       </ul>
-      <!--
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      -->
     </div>
   </div>
 </nav>

@@ -1,16 +1,44 @@
-<h1>Welcome to MyQuote</h1>
-<p>Your home for philosophical goodness.</p>
-<h3>Recently added quotes</h3>
-<hr />
-<% @quotes.each do |quote| %>
-    <div class="card bg-body-tertiary" style="margin-bottom:10px">
-    <div class="card-body">
-        <h4 class = "card-title">
-            <%= "#{quote.author.auth_fname} #{quote.author.auth_lname}" %></h4>
-        <p class="card-text">
-        <%= quote.quote %><br />
-        <a href="/quotes/<%= quote.id %>">Get more information</a>
-        </p>
+<div class="container mt-5">
+
+    <!-- Hero Landing Page -->
+        <div class="p-5 mb-4 bg-light rounded-3 shadow-sm">
+            <div class="container-fluid py-5 text-center">
+                <h1 class="display-3 fw-bold text-dark">Welcome to <span class="text-primary">MyQuote</span</h1>
+                <p class="fs-4 text-muted">Your home for philosophical goodness.</p>
+
+                <!-- Depending on logged in status, display call to action -->
+                <% if !logged_in? %>
+                    <%= link_to "Join the community today!", new_user_path, class: "btn btn-primary btn-lg px-4 gap-3" %>
+                <% else %>
+                    <%= link_to "Add your own quote!", new_quote_path, class: "btn btn-outline-primary btn-lg px-4 gap-3" %>
+                <% end %>
+            </div>
+        </div>
+
+    <!-- Recent quotes -->
+
+    <div class="mb-4 text-center">
+        <h2 class="fw-semibold">Recently added quotes</h2>
+        <p class="text-muted">Some fresh drops of wisdom from the community</p>
+        <hr />
     </div>
+
+    <div class="row">
+        <% @quotes.each do |quote| %>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class = "card-title text-dark">
+                            <%= "#{quote.author.auth_fname} #{quote.author.auth_lname}" %>
+                        </h5>
+                        <p class="card-text flex-grow-1">
+                            <%= quote.quote %><br />
+                        </p>
+                        <a href="/quotes/<%= quote.id %>">Get more information</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <% end%>
     </div>
-  <% end%>
+</div>

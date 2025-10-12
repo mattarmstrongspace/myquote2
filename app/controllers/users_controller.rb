@@ -77,7 +77,7 @@ class UsersController < ApplicationController
       @user = User.find(params.expect(:id))
     end
 
-    # Only allow a list of trusted parameters through, ensuring that the passwordfield is set as an allowed parameterin user controloler
+    # Only allow a list of trusted parameters through, ensuring that the passwordfield is set as an allowed parameter in user controloler
     def user_params
       params.expect(user: [ :fname, :lname, :email, :password, :is_admin, :status ])
     end

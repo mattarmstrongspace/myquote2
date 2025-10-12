@@ -69,14 +69,17 @@
   </div>
 
   <!-- Container for Quotes Category -->
-  <div class="form-group">
-      <label>Select Categories</label>
-      <% Category.all.each do |category| %>
-        <div class="form-check">
-          <%= check_box_tag "quote[category_ids][]", category.id, @quote.category_ids.include?(category.id), class: "form-check-input", id:"cat_#{category.id}" %>
-          <%= label_tag "cat_#{category.id}", category.cat_name, class: "form-check-label" %>
-        </div>
-      <% end %>
+  <div class="form-group"><label>Select Categories</label>
+      <div class="row">
+        <% Category.all.each do |category| %>
+          <div class="col-md-4">
+            <div class="form-check">
+              <%= check_box_tag "quote[category_ids][]", category.id, @quote.category_ids.include?(category.id), class: "form-check-input", id:"cat_#{category.id}" %>
+              <%= label_tag "cat_#{category.id}", category.cat_name, class: "form-check-label" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
   </div>
 
   <!-- Creating the submit button for the form -->
