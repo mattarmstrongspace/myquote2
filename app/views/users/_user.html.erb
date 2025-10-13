@@ -1,32 +1,36 @@
+<!-- Container for displaying user details -->
 <div id="<%= dom_id user %>" class="my-4">
-  
+
+  <!-- Display user's first name -->
   <div class="mb-3">
-    <label class="form-label"><strong>Fname:</strong></label>
+    <label class="form-label"><strong>First name:</strong></label>
     <div><%= user.fname %></div>
   </div>
 
+  <!-- Display user's last name -->
   <div class="mb-3">
-    <label class="form-label"><strong>Lname:</strong></label>
+    <label class="form-label"><strong>Last name:</strong></label>
     <div><%= user.lname %></div>
   </div>
 
+  <!-- Display user's email address -->
   <div class="mb-3">
     <label class="form-label"><strong>Email:</strong></label>
     <div><%= user.email %></div>
   </div>
 
+  <!-- Display password status without revealing actual password -->
   <div class="mb-3">
     <label class="form-label"><strong>Current Password:</strong></label>
-
-    <%# don't render password to screen %>
+    <!-- Do not render password to screen -->
     <span class="text-danger">ENCRYPTED</span>
   </div>
 
+  <!-- Display account type based on admin status -->
   <div class="mb-3">
     <label class="form-label"><strong>Account Type:</strong></label>
     <div>
-
-      <%# set role according to is_admin setting for user %>
+      <!-- Set role according to is_admin setting for user -->
       <% if user.is_admin %>
         <span>Administrator</span>
       <% else %>
@@ -35,6 +39,7 @@
     </div>
   </div>
 
+  <!-- Display current account status -->
   <div class="mb-3">
     <label class="form-label"><strong>Status:</strong></label>
     <div><%= user.status %></div>

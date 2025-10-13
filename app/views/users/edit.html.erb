@@ -1,21 +1,21 @@
-<div style="padding-top: 10px;">
-  
-<%# adjusting view depending on if user is standard or admin %>
-<% if logged_in? && is_administrator? %>
-  <h3>Update User Details</h3>
+<!-- Section header with conditional title based on user role -->
+<div class="pt-3 text-center">
+  <% if logged_in? && is_administrator? %>
+    <h3 class="fw-bold">Update User Details</h3>
   <% else %>
-  <h3>Update Your Details</h3>
+    <h3 class="fw-bold">Update Your Details</h3>
   <% end %>
 </div>
 
-<%= render "form", user: @user %>
-
-<%# Only admin can see links %>
-<% if logged_in? && is_administrator? %>
-<div style="padding-top: 10px;">
-  <div>
-    <%= link_to "Show this user", @user %> |
-    <%= link_to "Back to users", users_path %>
-  </div>
+<!-- Render the shared user form partial -->
+<div class="mt-4">
+  <%= render "form", user: @user %>
 </div>
+
+<!-- Admin-only navigation links -->
+<% if logged_in? && is_administrator? %>
+  <div class="text-center mt-4">
+    <%= link_to "Show this user", @user, class: "btn btn-outline-secondary me-2" %>
+    <%= link_to "Back to users", users_path, class: "btn btn-outline-secondary" %>
+  </div>
 <% end %>

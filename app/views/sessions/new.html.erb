@@ -4,20 +4,24 @@
     <p class="error" style="color:red;"><%= flash[:error] %></p>
 <% end %>
 
-<h2>Sign in</h2>
+<p style="color: green"><%= notice %></p>
 
-    <%= form_tag login_path, method: :post do %>
+<!-- Login page header -->
+<h2 class="fw-bold text-center mt-4 mb-3">Sign In</h2>
 
-    <div class="form-group" style="padding-bottom: 10px;">
-        <%= email_field_tag :email, nil, required: true, placeholder: 'Email Address', class: 'form-control' %>
-    </div>
+<!-- Login form -->
+<%= form_tag login_path, method: :post, class: "mx-auto", style: "max-width: 400px;" do %>
 
-    <div class="form-group" style="padding-bottom: 10px;">
-        <%= password_field_tag :password, nil, required: true, placeholder: 'Password', class: 'form-control' %>
-    </div>
+  <div class="mb-3">
+    <%= email_field_tag :email, nil, required: true, placeholder: 'Email Address', class: 'form-control' %>
+  </div>
 
-    <div>
-        <%= submit_tag 'Login', class: 'btn btn-primary' %>
-    </div>
-    
+  <div class="mb-3">
+    <%= password_field_tag :password, nil, required: true, placeholder: 'Password', class: 'form-control' %>
+  </div>
+
+  <div class="text-center">
+    <%= submit_tag 'Login', class: 'btn btn-primary px-4' %>
+  </div>
+
 <% end %>

@@ -1,45 +1,51 @@
+<!-- Container for individual quote card -->
 <div id="<%= dom_id quote %>" class="card mb-4 shadow-sm">
-<div class="card-body text-center">
+  <div class="card-body text-center">
 
-  <%# Quote and Year , with bootstrap styling %>
-  <h5 class="card-title">
-    <q><%= quote.quote %></q>
-    <br>
-    <small class="text-muted">- <%= quote.year.presence || "Unknown" %></small>
-  </h5>
+    <!-- Quote text and year, styled with Bootstrap -->
+    <h5 class="card-title">
+      <q><%= quote.quote %></q>
+      <br>
+      <small class="text-muted">- <%= quote.year.presence || "Unknown" %></small>
+    </h5>
 
-  <%# Optionall Comment %>
-  <% if quote.comment.present? %>
-    <p class="card-text"<em><%= quote.comment %></em></p>
-  <% end %>
+    <!-- Optional user comment -->
+    <% if quote.comment.present? %>
+      <p class="card-text"><em><%= quote.comment %></em></p>
+    <% end %>
 
-  <%# VisibilityLabel %>
-  <% if current_user && quote.user == current_user %>
-    <%if quote.is_public? %>
-      <span class="badge bg-success">Public</span>
+    <!-- Visibility label shown only to the quote owner -->
+    <% if current_user && quote.user == current_user %>
+      <% if quote.is_public? %>
+        <span class="badge bg-success">Public</span>
+      <% else %>
+        <span class="badge bg-secondary">Private</span>
+      <% end %>
+    <% end %>
+
+    <hr>
+
+    <!-- Author information, shown if present -->
+    <% if quote.author.present? %>
+      <p><strong>Author:</strong> <%= quote.author.auth_fname %> <%= quote.author.auth_lname %></p>
+      <p>
+        <strong>Born:</strong> <%= quote.author.birth_year.presence || "Unknown" %> |
+        <strong>Died:</strong> <%= quote.author.death_year.presence || "Unknown" %>
+      </p>
+      <% if quote.author.bio.present? %>
+        <p><strong>Bio:</strong> <%= quote.author.bio %></p>
+      <% end %>
     <% else %>
-    <span class="badge bg-secondary">Private</span>
+      <p><strong>Author:</strong> Anonymous</p>
     <% end %>
-  <% end %>
 
-  <hr>
+    <hr>
 
-  <%# Author information showing dependent on whether or not there is information about the author, of if they are anonymous %>
-  <% if quote.author.present? %>
-    <p><strong>Author:</strong> <%= quote.author.auth_fname %> <%= quote.author.auth_lname %></p>
-    <p><strong>Born:</strong> <%= quote.author.birth_year.presence || "Unknown" %> | <strong>Died:</strong> <%= quote.author.death_year.presence || "Unknown" %> </p>
-    <% if quote.author.bio.present? %>
-      <p><strong>Bio:</strong> <%= quote.author.bio %></p>
-    <% end %>
-  <% else %>
-    <p><strong>Author:</strong> Anonymous </p>
-  <% end %>
+    <!-- Display name of the user who submitted the quote -->
+    <p>
+      <strong>Submitted by:</strong>
+      <%= quote.user.fname %>
+    </p>
 
-  <hr>
-
-  <p>
-    <strong>Submitted by:</strong>
-    <%= quote.user.fname %> <%# Updated to first name instead of User ID %>
-  </p>
-
+  </div>
 </div>

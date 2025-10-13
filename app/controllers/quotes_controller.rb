@@ -85,7 +85,7 @@ class QuotesController < ApplicationController
     params.require(:quote).permit(*permitted)
   end
 
-  # Method to ensure that only the quote owner can edit or delete
+  # authorize_user method to ensure that only the quote owner can edit or delete
   def authorize_user
     unless @quote.user == current_user
       redirect_to your_quotes_path, alert: "You are not authorized to edit this quote"

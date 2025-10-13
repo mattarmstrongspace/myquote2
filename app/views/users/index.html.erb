@@ -1,26 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
+<!-- Set page title for layout -->
 <% content_for :title, "Users" %>
+<h3 class="fw-bold mb-4">Manage Users</h3>
 
-<h3>Manage Users</h3>
-
+<!-- User list -->
 <div id="users">
   <% @users.each do |user| %>
-    <div class="user card mb-4">
+    <div class="user card mb-4 shadow-sm">
       <div class="card-body">
-        <p class="card-text"><span style="font-weight: bold;">First Name:</span> <%= user.fname %></p>
-        <p class="card-text"><span style="font-weight: bold;">Last Name:</span> <%= user.lname %></p>
-        <p class="card-text"><span style="font-weight: bold;">Email:</span> <%= user.email %></p>
-        <p class="card-text"><span style="font-weight: bold;">Status:</span> <%= user.status %></p>
-        <a href="<%= user_path(user) %>" class="btn btn-primary">Manage User</a>
+        <p class="card-text"><strong>First Name:</strong> <%= user.fname %></p>
+        <p class="card-text"><strong>Last Name:</strong> <%= user.lname %></p>
+        <p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+        <p class="card-text"><strong>Status:</strong> <%= user.status %></p>
+        <%= link_to "Manage User", user_path(user), class: "btn btn-primary" %>
       </div>
     </div>
-    <!--
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-    -->
   <% end %>
 </div>
 
-<% link_to "New user", new_user_path %>
+<!-- New user button -->
+<div class="text-center mt-4">
+  <%= link_to "New User", new_user_path, class: "btn btn-secondary" %>
+</div>

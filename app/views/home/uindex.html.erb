@@ -1,7 +1,21 @@
 <!-- User landing page once they have logged in -->
 
 <p style="color: green"><%= notice %></p>
-<p>Hello <%= session[:fname] %></p>
-<h3>Standard User Landing Page</h3>
-<p>This is where general messages to the account holder would go</p>
-<%= link_to "Edit your account details", edit_user_path(session[:user_id]) %>
+
+  <!-- Welcome message and user info -->
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Welcome, <%= session[:fname] %>!</h2>
+    <p>Continue your philosophical journey today!</p>
+  </div>
+
+  <!-- buttons for quote management -->
+  <div class="text-center mb-4">
+    <%= link_to "Add New Quote", new_quote_path, class: "btn btn-primary me-2" %>
+    <%= link_to "See My Quotes", your_quotes_path, class: "btn btn-secondary" %>
+   </div>
+
+  <!-- Account management link -->
+  <div class="text-center">
+    <%= link_to "Edit your account details", edit_user_path(session[:user_id]), class: "btn btn-outline-primary" %>
+  </div>
+</div>

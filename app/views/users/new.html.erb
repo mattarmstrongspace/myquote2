@@ -1,14 +1,13 @@
-<% content_for :title, "New user" %>
+<!-- Set page title for layout -->
+<% content_for :title, "New User" %>
 
-<h4 style="padding-top:10px;">Join MyQuote Today!</h4>
-<p> Getting started on a philosophical journey is easy and free! </p>
-
-<%= render "form", user: @user %>
-
-<!--
-<br>
-
-<div>
-  <%= link_to "Back to users", users_path %>
+<!-- Section header and intro -->
+<div class="text-center mt-4 mb-3">
+  <h3 class="fw-bold">Join MyQuote Today!</h3>
+  <p class="text-muted">Getting started on a philosophical journey is easy and free!</p>
 </div>
--->
+
+<!-- Render the shared user form partial -->
+<div class="container">
+  <%= render "form", user: @user %>
+</div>

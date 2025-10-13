@@ -11,65 +11,69 @@
 
 <!-- Initiating rendering of a form for the @quote object in QuotesController. Configure form to submit to quotes_path using POST, and using local:true to send data as areg HTTP request. Form is formatted using Bootstrap styling for uniformity and UI design -->
 <%= form_with(model: @quote, local: true) do |f| %>
-  <!-- Hidden field for user_id, being extracted from session object. -->
-  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="container mt-4">
 
-  <!-- Form fields associated with the quotes table -->
-  <div class="form-group" style="padding-bottom: 10px;">
-    <%= f.text_area :quote, placeholder: 'Enter the quote', class: 'form-control' %>
-  </div>  
+    <!-- Hidden field for user_id, being extracted from session object. -->
+    <%= f.hidden_field :user_id, value: current_user.id %>
 
-  <div class="form-group" style="padding-bottom: 10px;">
-    <%= f.number_field :year, placeholder: 'Year of Quote', class: 'form-control' %>
-  </div>
+    <!-- Form fields associated with the quotes table -->
+    <div class="mb-3">
+      <%= f.text_area :quote, placeholder: 'Enter the quote', class: 'form-control', rows: 3 %>
+    </div>  
 
-  <!--Existing Author Dropdown -->
-  <div class="form-group" style="padding-bottom: 10px;">
-    <!-- Creating a dropdown list for selecting existing authors -->
-    <%= f.label :author_id, "Select Existing Author", class: 'form-label' %>
-    <%= f.select :author_id, [["(New author)", ""]] + Author.all.collect {|a| [a.is_anon ? "Anonymous" : "#{a.auth_fname} #{a.auth_lname}", a.id]}, {}, class: 'form-control', id: 'author-select' %>
-  </div>
+    <div class="mb-3">
+      <%= f.number_field :year, placeholder: 'Year of Quote', class: 'form-control' %>
+    </div>
 
-  <!-- New Author Fields -->
-  <div id="new-author-fields" style="display: none;">
-    <%= f.fields_for :author, @quote.author do |a| %>
-      <%= a.hidden_field :id %>
-      <div class="row mb-2 author-field">
-        <div class="col">
-          <%= a.text_field :auth_fname, placeholder: "First Name", class: "form-control" %>
+    <!--Existing Author Dropdown -->
+    <div class="mb-3">
+      <!-- Creating a dropdown list for selecting existing authors -->
+      <%= f.label :author_id, "Select Existing Author", class: 'form-label' %>
+      <%= f.select :author_id, [["(New author)", ""]] + Author.all.collect {|a| [a.is_anon ? "Anonymous" : "#{a.auth_fname} #{a.auth_lname}", a.id]}, {}, class: 'form-select', id: 'author-select' %>
+    </div>
+
+    <!-- New Author Fields -->
+    <div id="new-author-fields" style="display: none;">
+      <%= f.fields_for :author, @quote.author do |a| %>
+        <%= a.hidden_field :id %>
+        <div class="row mb-3 author-field">
+          <div class="col-md-6">
+            <%= a.text_field :auth_fname, placeholder: "First Name", class: "form-control" %>
+          </div>
+          <div class="col-md-6">
+            <%= a.text_field :auth_lname, placeholder: "Last Name", class: "form-control" %>
+          </div>
         </div>
-        <div class="col">
-          <%= a.text_field :auth_lname, placeholder: "Last Name", class: "form-control" %>
+        <div class="row mb-3 author-field">
+          <div class="col-md-6">
+            <%= a.number_field :birth_year, placeholder: "Birth Year", class: "form-control" %>
+          </div>
+          <div class="col-md-6">
+            <%= a.number_field :death_year, placeholder: "Death Year", class: "form-control" %>
+          </div>
         </div>
-      </div>
-      <div class="row mb-2 author-field">
-        <div class="col">
-          <%= a.number_field :birth_year, placeholder: "Birth Year", class: "form-control" %>
+        <div class="mb-3 author-field">
+          <%= a.text_area :bio, placeholder: "Short Bio", class: "form-control", rows: 3 %>
         </div>
-        <div class="col">
-          <%= a.number_field :death_year, placeholder: "Death Year", class: "form-control" %>
-        </div>
-      </div>
-      <div class="form-group author-field">
-        <%= a.text_area :bio, placeholder: "Short Bio", class: "form-control" %>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
-  <!-- User comment -->
-  <div class="form-group" style="padding-bottom: 10px;">
-    <%= f.text_area :comment, placeholder: "User comment", class: 'form-control' %>
+    <!-- User comment -->
+    <div class="mb-3">
+      <%= f.text_area :comment, placeholder: "User comment", class: 'form-control', rows: 2 %>
+    </div>
 
-  <!-- Public Quote -->
-  <div class="form-check" style="padding-bottom: 10px;">
-    <%= f.label :is_public do %>
-    Public
-    <%= f.check_box :is_public, class: "form-check-input" %>
-    <% end %>
-  </div>
+    <!-- Public Quote -->
+    <div class="form-check mb-3">
+      <%= f.label :is_public, class: "form-check-label" do %>
+        Public
+        <%= f.check_box :is_public, class: "form-check-input ms-2" %>
+      <% end %>
+    </div>
 
-  <!-- Container for Quotes Category -->
-  <div class="form-group"><label>Select Categories</label>
+    <!-- Container for Quotes Category -->
+    <div class="mb-3">
+      <label class="form-label">Select Categories</label>
       <div class="row">
         <% Category.all.each do |category| %>
           <div class="col-md-4">
@@ -80,11 +84,13 @@
           </div>
         <% end %>
       </div>
-  </div>
+    </div>
 
-  <!-- Creating the submit button for the form -->
-  <div class="mt-3">
-    <%= f.submit 'Create Quote', class: 'btn btn-primary btn-lg' %>
+    <!-- Creating the submit button for the form, based on whether quote is being created or edited -->
+    <div class="text-center mt-4">
+      <%= f.submit @quote.persisted? ? 'Update Quote' : 'Create Quote', class: 'btn btn-primary btn-lg px-4' %>
+    </div>
+
   </div>
 <% end %>
 
@@ -110,5 +116,5 @@ document.addEventListener('turbo:load', function() {
 
     //run when dropdown changed
     authorSelect.addEventListener('change', toggleNewAuthor);
-  });
+});
 </script>
