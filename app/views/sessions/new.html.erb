@@ -1,7 +1,9 @@
 <!--creating a login page using bootstrap styling and rails forms -->
 
 <% if flash[:error] %>
-    <p class="error" style="color:red;"><%= flash[:error] %></p>
+  <div class="alert alert-danger text-center" role="alert">
+    <%= flash[:error] %>
+  </div>
 <% end %>
 
 <p style="color: green"><%= notice %></p>

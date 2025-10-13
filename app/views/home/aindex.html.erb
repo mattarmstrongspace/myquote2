@@ -2,4 +2,17 @@
 
 <p style="color: green"><%= notice %></p>
 
-<h3>Adminstrator Landing Page</h3>
+<!-- Welcome message -->
+<div class="text-center mb-4">
+  <h2 class="fw-bold">Welcome, Administrator <%= session[:fname] %>!</h2>
+</div>
+
+<!-- Admin action -->
+<div class="text-center mb-4">
+  <%= link_to "Manage Users", users_path, class: "btn btn-danger me-2" %>
+</div>
+
+<!-- Account management -->
+<div class="text-center">
+  <%= link_to "Edit your account details", edit_user_path(session[:user_id]), class: "btn btn-outline-primary" %>
+</div>

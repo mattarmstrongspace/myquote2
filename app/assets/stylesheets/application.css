@@ -18,7 +18,7 @@
  }
 /* applying stylingfor the container to looklike a scroll */
  .container {
-    background-color: #fffef5; /* slightly lighter parchment */
+    background-color: #fffef5; 
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -34,4 +34,9 @@
 
  p, label, input, textarea {
     font-family: 'Georgia', serif;
+ }
+
+ .navbar-parchment {
+   background-color: #5a4f3f;
+   border-bottom:1px solid #535442;
  }

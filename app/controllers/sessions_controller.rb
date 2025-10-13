@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
         
         else
             #if authetnication fails, error message displays and login form is re rendered
-            flash.now[:error] = "Invalid email or password. Please try again."
+            flash[:error] = "Invalid email or password. Please try again."
             render 'new'
         end
     end
