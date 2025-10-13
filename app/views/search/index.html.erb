@@ -32,7 +32,7 @@
     <% @quotematch.each do |quote| %>
       <div class="card mb-3">
         <div class="card-body">
-          <h5 class="card-title text-primary"><%= "#{quote.author.auth_fname} #{quote.author.auth_lname}" %></h5>
+          <h5 class="card-title fw-bold"><%= "#{quote.author.auth_fname} #{quote.author.auth_lname}" %></h5>
           <p class="card-text"><%= quote.quote %></p>
 
           <!-- Link to full quote details -->
